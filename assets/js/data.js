@@ -436,7 +436,16 @@ window.CM.gallery = function (slug) {
 };
 
 window.CM.getProduct = function (slug) {
-  return window.PRODUCTS.find(function (p) { return p.slug === slug; }) || null;
+  if (!slug) return null;
+  var p = window.PRODUCTS.find(function (x) { return x.slug === slug; });
+  if (p) return p;
+  var s = String(slug).toLowerCase().trim();
+  p = window.PRODUCTS.find(function (x) {
+    return x.id === s
+      || String(x.name).toLowerCase().indexOf(s) !== -1
+      || String(x.slug).toLowerCase().indexOf(s) !== -1;
+  });
+  return p || null;
 };
 
 /* Корзина (demo state в localStorage) */

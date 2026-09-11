@@ -1,0 +1,103 @@
+{
+  "generatedAt": "2026-09-11T02:05:01.787Z",
+  "baseUrl": "https://altairstudio-ru.github.io/creatmebel.ru/",
+  "interactions": [
+    {
+      "name": "home-modal-size-desktop",
+      "status": "PASS",
+      "note": "{\"clickInfo\":\"clicked:Рассчитать по своим размерам\",\"box\":{\"visible\":true,\"w\":1280,\"h\":800}}"
+    },
+    {
+      "name": "home-form-success-mobile",
+      "status": "PASS",
+      "note": "submit=submitted, success visible=true"
+    },
+    {
+      "name": "home-mobile-menu",
+      "status": "PASS",
+      "note": "menu-open=true"
+    },
+    {
+      "name": "catalog-skeleton-mobile",
+      "status": "EVIDENCE",
+      "note": "grid children after load=6"
+    },
+    {
+      "name": "catalog-tab-switch",
+      "status": "PASS",
+      "note": "before=\"Найдено 6 товаров\" after=\"Найдено 9 товаров\" corpusActive=true"
+    },
+    {
+      "name": "catalog-filters-applied",
+      "status": "EVIDENCE",
+      "note": "click=clicked countBefore=\"Найдено 6 товаров\" countAfter=\"Найдено 3 товара\" filterBtn=\"Фильтры (1)\""
+    },
+    {
+      "name": "catalog-filter-sheet-mobile",
+      "status": "PASS",
+      "note": "sheet-open=true"
+    },
+    {
+      "name": "product-sticky-mobile",
+      "status": "PASS",
+      "note": "{\"show\":true,\"text\":\"45 200 ₽ 5–7 дней В корзину ✆\"}"
+    },
+    {
+      "name": "product-options-recalc",
+      "status": "SUSPECT",
+      "note": "chips=3 priceBefore=\"45 200 ₽\" priceAfter=\"45 200 ₽\""
+    },
+    {
+      "name": "product-add-to-cart",
+      "status": "EVIDENCE",
+      "note": "{\"btnText\":\"✓ В корзине\",\"toastVisible\":\"visible\",\"badgeHidden\":false,\"badgeText\":\"1\"}"
+    },
+    {
+      "name": "cart-empty-desktop",
+      "status": "PASS",
+      "note": "empty visible=true"
+    },
+    {
+      "name": "cart-filled-and-promo",
+      "status": "EVIDENCE",
+      "note": "{\"filledVisible\":true,\"total\":\"93 000 ₽\",\"msgKD20\":\"Промокод не найден\",\"totalKD20\":\"93 000 ₽\",\"msgKB20\":\"−5% по промокоду KB20\",\"totalKB20\":\"88 350 ₽\"}"
+    },
+    {
+      "name": "contacts-form-validation",
+      "status": "EVIDENCE",
+      "note": "{\"inputError\":false,\"hintShown\":false,\"hintText\":\"\"}"
+    },
+    {
+      "name": "delivery-calc",
+      "status": "EVIDENCE",
+      "note": "{\"default\":{\"total\":\"Доставка и подъёмВключено бесплатноСборка0 ₽ (в подарок)Итого0 ₽ — всё включено\",\"anomalyHidden\":true},\"beyond\":\"done\",\"afterBeyond\":{\"anomalyHidden\":false,\"total\":\"Итого2 400 ₽\"}}"
+    },
+    {
+      "name": "product-id=richards",
+      "status": "CONFIRMED_BUG",
+      "note": "Товар не найденВозможно, вы перешли по старой ссылке.В каталог"
+    },
+    {
+      "name": "product-card-required-elements",
+      "status": "EVIDENCE",
+      "note": "{\"title\":\"Диван угловой «Ричардс»\",\"price\":\"45 200 ₽\",\"oldPrice\":\"50 200 ₽\",\"installment\":\"Рассрочка 0-0-12: 3 767 ₽/мес, без первого взноса\",\"includedRows\":4,\"includedTotal\":\"✓Итого всё включено45 200 ₽\",\"sizeRows\":5,\"materialRows\":3,\"stock\":\"Готовность 7–9 дней · доставка +1–2 дня\",\"addBtn\":\"В корзину\",\"hasStickyPrice\":true,\"hasStickyAdd\":true,\"features\":4,\"tabs\":5}"
+    },
+    {
+      "name": "header-footer-uniformity",
+      "status": "EVIDENCE",
+      "note": "{\"index.html\":{\"header\":true,\"footer\":true,\"phone\":true,\"footerPhone\":true,\"footerNav\":2,\"tabbar\":true,\"footerYear\":\"© 2015–2025\"},\"catalog.html?cat=soft\":{\"header\":true,\"footer\":true,\"phone\":true,\"footerPhone\":true,\"footerNav\":2,\"tabbar\":true,\"footerYear\":\"© 2015–2025\"},\"product.html?id=divan-uglovoy-richards\":{\"header\":true,\"footer\":true,\"phone\":true,\"footerPhone\":true,\"footerNav\":2,\"tabbar\":true,\"footerYear\":\"© 2015–2025\"},\"production.html\":{\"header\":true,\"footer\":true,\"phone\":true,\"footerPhone\":true,\"footerNav\":2,\"tabbar\":true,\"footerYear\":\"© 2015–2025\"},\"delivery.html\":{\"header\":true,\"footer\":true,\"phone\":true,\"footerPhone\":true,\"footerNav\":2,\"tabbar\":true,\"footerYear\":\"© 2015–2025\"},\"contacts.html\":{\"header\":true,\"footer\":true,\"phone\":true,\"footerPhone\":true,\"footerNav\":2,\"tabbar\":true,\"footerYear\":\"© 2015–2025\"},\"cart.html\":{\"header\":true,\"footer\":true,\"phone\":true,\"footerPhone\":true,\"footerNav\":2,\"tabbar\":true,\"footerYear\":\"© 2015–2025\"},\"404.html\":{\"header\":true,\"footer\":true,\"phone\":true,\"footerPhone\":true,\"footerNav\":2,\"tabbar\":true,\"footerYear\":\"© 2015–2025\"}}"
+    },
+    {
+      "name": "home-hits-grid",
+      "status": "PASS",
+      "note": "{\"cards\":4,\"skeletons\":0}"
+    },
+    {
+      "name": "404-content",
+      "status": "EVIDENCE",
+      "note": " КРЕАТ. мебель от производителя Каталог Производство Доставка и оплата Контакты +7 (920) 622-51-95 0 × КРЕАТ.мебель от производителя Каталог Производство Доставка и оплата Контакты Мебель по моим размерам +7 (920) 622-51-95 Перезвоним за 15 минут · 9:00–20:00 404 Такой страницы нет — зато есть мебель, которая точно впишется Возможно, ссылка устарела. Начните с каталога или оставьте заявку — подбер"
+    }
+  ],
+  "consoleErrors": [],
+  "overflowChecks": []
+}

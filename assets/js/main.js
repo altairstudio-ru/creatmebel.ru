@@ -878,27 +878,29 @@
       });
     }
 
-    makeChips(fabricChips, fabricOpts, 0, function (i) {
+    function onFabric(i) {
       state.fabric = i;
-      makeChips(fabricChips, fabricOpts, i, arguments.callee);
+      makeChips(fabricChips, fabricOpts, i, onFabric);
       renderPrice(true);
-    });
-
-    makeChips(mechChips, mechOpts, mechOpts.length - 1, function (i) {
+    }
+    function onMech(i) {
       state.mech = i;
-      makeChips(mechChips, mechOpts, i, arguments.callee);
+      makeChips(mechChips, mechOpts, i, onMech);
       renderPrice(false);
-    });
-
-    makeChips(sizeChips, sizeOpts.map(function (s) {
-      return s.delta ? s.label + ' +' + formatNumber(s.delta) + ' ₽' : s.label;
-    }), 0, function (i) {
+    }
+    function onSize(i) {
       state.size = i;
       makeChips(sizeChips, sizeOpts.map(function (s) {
         return s.delta ? s.label + ' +' + formatNumber(s.delta) + ' ₽' : s.label;
-      }), i, arguments.callee);
+      }), i, onSize);
       renderPrice(true);
-    });
+    }
+
+    makeChips(fabricChips, fabricOpts, 0, onFabric);
+    makeChips(mechChips, mechOpts, mechOpts.length - 1, onMech);
+    makeChips(sizeChips, sizeOpts.map(function (s) {
+      return s.delta ? s.label + ' +' + formatNumber(s.delta) + ' ₽' : s.label;
+    }), 0, onSize);
 
     renderPrice(false);
 

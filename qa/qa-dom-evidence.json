@@ -1,0 +1,286 @@
+{
+  "pages": [
+    {
+      "name": "index",
+      "mobile": {
+        "hasHScroll": false,
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "burgerVisible": true,
+        "phoneVisible": false,
+        "tabbarVisible": true,
+        "tabbarHeight": 65,
+        "wideEls": [],
+        "bodyPad": {
+          "class": "bg-cream font-sans text-ink antialiased body-pad-bottom",
+          "paddingBottom": "80px"
+        },
+        "consoleErrors": []
+      },
+      "desktop": {
+        "h1Count": 1,
+        "metaDesc": 1,
+        "deadLinks": 2,
+        "brokenImgs": 15,
+        "title": "Креат Мебель — мягкая и корпусная мебель в Москве",
+        "consoleErrors": []
+      }
+    },
+    {
+      "name": "catalog-soft",
+      "mobile": {
+        "hasHScroll": false,
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "burgerVisible": true,
+        "phoneVisible": false,
+        "tabbarVisible": true,
+        "tabbarHeight": 65,
+        "wideEls": [],
+        "bodyPad": {
+          "class": "bg-cream font-sans text-ink antialiased body-pad-bottom",
+          "paddingBottom": "80px"
+        },
+        "consoleErrors": []
+      },
+      "desktop": {
+        "h1Count": 1,
+        "metaDesc": 1,
+        "deadLinks": 2,
+        "brokenImgs": 6,
+        "title": "Каталог мебели от производителя — Креат Мебель",
+        "consoleErrors": []
+      }
+    },
+    {
+      "name": "catalog-corpus",
+      "mobile": {
+        "hasHScroll": false,
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "burgerVisible": true,
+        "phoneVisible": false,
+        "tabbarVisible": true,
+        "tabbarHeight": 65,
+        "wideEls": [],
+        "bodyPad": {
+          "class": "bg-cream font-sans text-ink antialiased body-pad-bottom",
+          "paddingBottom": "80px"
+        },
+        "consoleErrors": []
+      },
+      "desktop": {
+        "h1Count": 1,
+        "metaDesc": 1,
+        "deadLinks": 2,
+        "brokenImgs": 6,
+        "title": "Каталог мебели от производителя — Креат Мебель",
+        "consoleErrors": []
+      }
+    },
+    {
+      "name": "product-richards",
+      "mobile": {
+        "hasHScroll": false,
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "burgerVisible": true,
+        "phoneVisible": false,
+        "tabbarVisible": true,
+        "tabbarHeight": 65,
+        "wideEls": [],
+        "bodyPad": {
+          "class": "bg-cream font-sans text-ink antialiased body-pad-bottom",
+          "paddingBottom": "80px"
+        },
+        "consoleErrors": []
+      },
+      "desktop": {
+        "h1Count": 0,
+        "metaDesc": 1,
+        "deadLinks": 2,
+        "brokenImgs": 0,
+        "title": "Диван угловой «Ричардс» 45 200 ₽ в Москве — Креат Мебель",
+        "consoleErrors": []
+      }
+    },
+    {
+      "name": "product-richards-full",
+      "mobile": {
+        "hasHScroll": false,
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "burgerVisible": true,
+        "phoneVisible": false,
+        "tabbarVisible": true,
+        "tabbarHeight": 65,
+        "wideEls": [],
+        "bodyPad": {
+          "class": "bg-cream font-sans text-ink antialiased body-pad-bottom",
+          "paddingBottom": "80px"
+        },
+        "consoleErrors": []
+      },
+      "desktop": {
+        "h1Count": 1,
+        "metaDesc": 1,
+        "deadLinks": 2,
+        "brokenImgs": 9,
+        "title": "Диван угловой «Ричардс» — цена 45 200 ₽ в Москве | Креат Мебель",
+        "consoleErrors": []
+      }
+    },
+    {
+      "name": "production",
+      "mobile": {
+        "hasHScroll": true,
+        "scrollWidth": 405,
+        "clientWidth": 390,
+        "burgerVisible": true,
+        "phoneVisible": false,
+        "tabbarVisible": true,
+        "tabbarHeight": 65,
+        "wideEls": [],
+        "bodyPad": {
+          "class": "bg-cream font-sans text-ink antialiased body-pad-bottom",
+          "paddingBottom": "80px"
+        },
+        "consoleErrors": []
+      },
+      "desktop": {
+        "h1Count": 1,
+        "metaDesc": 1,
+        "deadLinks": 2,
+        "brokenImgs": 8,
+        "title": "Производство — Креат Мебель",
+        "consoleErrors": []
+      }
+    },
+    {
+      "name": "delivery",
+      "mobile": {
+        "hasHScroll": false,
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "burgerVisible": true,
+        "phoneVisible": false,
+        "tabbarVisible": true,
+        "tabbarHeight": 65,
+        "wideEls": [],
+        "bodyPad": {
+          "class": "bg-cream font-sans text-ink antialiased body-pad-bottom",
+          "paddingBottom": "80px"
+        },
+        "consoleErrors": []
+      },
+      "desktop": {
+        "h1Count": 1,
+        "metaDesc": 1,
+        "deadLinks": 2,
+        "brokenImgs": 0,
+        "title": "Доставка, подъём, сборка и оплата — Креат Мебель",
+        "consoleErrors": []
+      }
+    },
+    {
+      "name": "contacts",
+      "mobile": {
+        "hasHScroll": true,
+        "scrollWidth": 430,
+        "clientWidth": 390,
+        "burgerVisible": true,
+        "phoneVisible": false,
+        "tabbarVisible": true,
+        "tabbarHeight": 65,
+        "wideEls": [],
+        "bodyPad": {
+          "class": "bg-cream font-sans text-ink antialiased body-pad-bottom",
+          "paddingBottom": "80px"
+        },
+        "consoleErrors": []
+      },
+      "desktop": {
+        "h1Count": 1,
+        "metaDesc": 1,
+        "deadLinks": 2,
+        "brokenImgs": 0,
+        "title": "Контакты — Креат Мебель",
+        "consoleErrors": []
+      }
+    },
+    {
+      "name": "cart",
+      "mobile": {
+        "hasHScroll": false,
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "burgerVisible": true,
+        "phoneVisible": false,
+        "tabbarVisible": true,
+        "tabbarHeight": 65,
+        "wideEls": [],
+        "bodyPad": {
+          "class": "bg-cream font-sans text-ink antialiased body-pad-bottom",
+          "paddingBottom": "80px"
+        },
+        "consoleErrors": []
+      },
+      "desktop": {
+        "h1Count": 1,
+        "metaDesc": 1,
+        "deadLinks": 2,
+        "brokenImgs": 0,
+        "title": "Корзина — Креат Мебель",
+        "consoleErrors": []
+      }
+    },
+    {
+      "name": "404",
+      "mobile": {
+        "hasHScroll": false,
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "burgerVisible": true,
+        "phoneVisible": false,
+        "tabbarVisible": true,
+        "tabbarHeight": 65,
+        "wideEls": [],
+        "bodyPad": {
+          "class": "bg-cream font-sans text-ink antialiased body-pad-bottom",
+          "paddingBottom": "80px"
+        },
+        "consoleErrors": []
+      },
+      "desktop": {
+        "h1Count": 1,
+        "metaDesc": 0,
+        "deadLinks": 1,
+        "brokenImgs": 0,
+        "title": "Страница не найдена — Креат Мебель",
+        "consoleErrors": []
+      }
+    }
+  ],
+  "fonts": {
+    "loaded": [
+      "Manrope 400 unloaded",
+      "Manrope 400 loaded",
+      "Manrope 400 unloaded",
+      "Manrope 400 unloaded",
+      "Manrope 400 loaded",
+      "Manrope 400 loaded",
+      "Manrope 500 unloaded",
+      "Manrope 500 unloaded",
+      "Manrope 500 unloaded",
+      "Manrope 500 unloaded",
+      "Manrope 500 unloaded",
+      "Manrope 500 unloaded"
+    ],
+    "bodyFont": "Manrope, \"Golos Text\", ui-sans-serif, system-ui, sans-serif",
+    "h1Font": "Unbounded, Prata, ui-serif, Georgia, serif"
+  },
+  "internalLinks": {
+    "total": 21,
+    "missing": []
+  }
+}

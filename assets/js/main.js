@@ -1559,9 +1559,30 @@
   }
 
   /* ============================================================
+     ПЕРЕКЛЮЧАТЕЛЬ ЦВЕТОВЫХ СХЕМ
+     ============================================================ */
+  var SCHEME_KEY = 'cm_scheme';
+  function initSchemeToggle() {
+    var btn = $('#scheme-toggle');
+    var label = $('#scheme-label');
+    if (!btn) return;
+    var saved = localStorage.getItem(SCHEME_KEY);
+    if (saved === 'classic') {
+      document.documentElement.classList.add('scheme-classic');
+      if (label) label.textContent = 'Классика';
+    }
+    btn.addEventListener('click', function () {
+      var isClassic = document.documentElement.classList.toggle('scheme-classic');
+      if (label) label.textContent = isClassic ? 'Классика' : 'Минимализм';
+      localStorage.setItem(SCHEME_KEY, isClassic ? 'classic' : 'modern');
+    });
+  }
+
+  /* ============================================================
      ИНИЦИАЛИЗАЦИЯ
      ============================================================ */
   document.addEventListener('DOMContentLoaded', function () {
+    initSchemeToggle();
     updateBadges();
     initHeader();
     initModals();

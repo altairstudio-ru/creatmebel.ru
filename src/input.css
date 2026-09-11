@@ -36,6 +36,49 @@
   --radius-pill: 999px;
 }
 
+/* ============================================================
+   Вторая цветовая схема: «Классический красный»
+   Актуальный сайт creatmebel.ru (2024)
+   ============================================================ */
+html.scheme-classic {
+  --color-cream: #FBF9F8;
+  --color-sand: #F3EFEC;
+  --color-terracotta: #DF2C36;
+  --color-terracotta-600: #C41E2A;
+  --color-terracotta-50: #FDE8E9;
+  --color-olive: #7A8450;
+  --color-olive-50: #F1F3E7;
+  --color-navy: #464451;
+  --color-navy-700: #363440;
+  --color-ink: #262626;
+  --color-greige: #5A5A5A;
+  --color-card: #FFFFFF;
+  --color-line: #EEEEEE;
+}
+
+/* Переключатель темы */
+.scheme-toggle {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 14px; border-radius: 999px;
+  background: var(--color-sand); border: 1px solid var(--color-line);
+  cursor: pointer; transition: background .2s ease, border-color .2s ease;
+  font-size: 13px; font-weight: 600; color: var(--color-greige);
+  white-space: nowrap; user-select: none;
+}
+.scheme-toggle:hover { border-color: var(--color-terracotta); color: var(--color-terracotta); }
+.scheme-toggle-indicator {
+  width: 36px; height: 20px; border-radius: 999px; position: relative;
+  background: var(--color-terracotta); transition: background .25s ease;
+}
+.scheme-toggle-indicator::after {
+  content: ''; position: absolute; top: 2px; left: 2px;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: #fff; transition: transform .25s ease;
+}
+html.scheme-classic .scheme-toggle-indicator { background: var(--color-terracotta); }
+html:not(.scheme-classic) .scheme-toggle-indicator::after { transform: translateX(16px); }
+.scheme-toggle-label { line-height: 1; }
+
 /* --- Низкоуровневые переиспользуемые компоненты (class-based) --- */
 
 /* Кнопки-пилюли */

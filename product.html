@@ -96,7 +96,7 @@
         <!-- галерея -->
         <section aria-label="Фотографии товара">
           <div id="product-gallery" class="gallery-main relative rounded-(--radius-lg) overflow-hidden">
-            <img id="product-main-img" src="https://picsum.photos/seed/divan-richards/660/500" alt="" class="w-full aspect-[4/3] object-cover">
+            <img id="product-main-img" src="https://picsum.photos/seed/divan-richards/660/500" alt="" class="w-full aspect-[4/3] object-cover" onerror="CM.imgError(this)">
             <span id="product-main-badge" class="badge badge-sale absolute top-4 left-4">−5 000 ₽</span>
             <button id="gallery-prev" type="button" class="icon-btn !absolute left-3 top-1/2 -translate-y-1/2 bg-white/85 shadow-md hidden md:inline-flex" aria-label="Предыдущее фото">‹</button>
             <button id="gallery-next" type="button" class="icon-btn !absolute right-3 top-1/2 -translate-y-1/2 bg-white/85 shadow-md hidden md:inline-flex" aria-label="Следующее фото">›</button>
@@ -181,7 +181,7 @@
             <h3 class="font-display font-semibold">Характеристики</h3>
             <ul id="product-features" class="flex flex-col gap-2"></ul>
           </div>
-          <img src="https://picsum.photos/seed/divan-richards-2/900/500" alt="Диван в интерьере" loading="lazy" class="rounded-(--radius-lg) w-full object-cover">
+          <img src="https://picsum.photos/seed/divan-richards-2/900/500" alt="Диван в интерьере" loading="lazy" class="rounded-(--radius-lg) w-full object-cover" onerror="CM.imgError(this)">
         </div>
 
         <div id="tab-sizes" class="product-tab-panel hidden flex-col gap-4 max-w-3xl">

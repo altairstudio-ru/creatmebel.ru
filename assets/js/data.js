@@ -58,7 +58,13 @@ window.PRODUCTS = [
     "colorOptions": ["Серый", "Бежевый", "Оливковый"],
     "inStock": true, "productionDays": 5, "deliveryIncluded": true, "assemblyIncluded": true,
     "installmentFrom": 3900,
-    "image": "https://picsum.photos/seed/divan-oskar/600/400"
+    "image": "https://creatmebel.ru/assets/images/products/3037/oskar--1.jpg",
+    "images": [
+      "https://creatmebel.ru/assets/images/products/3037/oskar--1.jpg",
+      "https://creatmebel.ru/assets/images/products/3037/oskar--2.jpg",
+      "https://creatmebel.ru/assets/images/products/3037/oskar--3.jpg",
+      "https://creatmebel.ru/assets/images/products/3037/oskar--4.jpg"
+    ]
   },
   {
     "id": "sku-002",
@@ -85,7 +91,13 @@ window.PRODUCTS = [
     "colorOptions": ["Серый", "Синий", "Бежевый"],
     "inStock": true, "productionDays": 1, "deliveryIncluded": true, "assemblyIncluded": true,
     "installmentFrom": 2000,
-    "image": "https://picsum.photos/seed/divan-space-2/600/400"
+    "image": "https://creatmebel.ru/assets/images/products/3089/spejs-2.jpg",
+    "images": [
+      "https://creatmebel.ru/assets/images/products/3089/spejs-2.jpg",
+      "https://creatmebel.ru/assets/images/products/3089/spejs-2-2.jpg",
+      "https://creatmebel.ru/assets/images/products/3089/spejs-2-3.jpg",
+      "https://creatmebel.ru/assets/images/products/3089/spejs-2-4.jpg"
+    ]
   },
   {
     "id": "sku-003",
@@ -112,7 +124,12 @@ window.PRODUCTS = [
     "colorOptions": ["Песочный", "Графит", "Изумруд"],
     "inStock": true, "productionDays": 7, "deliveryIncluded": true, "assemblyIncluded": true,
     "installmentFrom": 3800,
-    "image": "https://picsum.photos/seed/divan-richards/600/400"
+    "image": "https://creatmebel.ru/assets/images/products/3968/richards-neo-azure-zerkalnyj-00.jpg",
+    "images": [
+      "https://creatmebel.ru/assets/images/products/3968/richards-neo-azure-zerkalnyj-00.jpg",
+      "https://creatmebel.ru/assets/images/products/3968/richards-neo-azure-zerkalnyj-01.jpg",
+      "https://creatmebel.ru/assets/images/products/3968/richards-neo-azure-zerkalnyj-02.jpg"
+    ]
   },
   {
     "id": "sku-004",
@@ -139,7 +156,12 @@ window.PRODUCTS = [
     "colorOptions": ["Бежевый", "Коричневый", "Серо-голубой"],
     "inStock": false, "productionDays": 14, "deliveryIncluded": true, "assemblyIncluded": true,
     "installmentFrom": 3800,
-    "image": "https://picsum.photos/seed/divan-loftter/600/400"
+    "image": "https://creatmebel.ru/assets/images/products/3021/lofter.jpg",
+    "images": [
+      "https://creatmebel.ru/assets/images/products/3021/lofter.jpg",
+      "https://creatmebel.ru/assets/images/products/3021/lofter-2.jpg",
+      "https://creatmebel.ru/assets/images/products/3021/lofter-3.jpg"
+    ]
   },
   {
     "id": "sku-005",
@@ -166,7 +188,10 @@ window.PRODUCTS = [
     "colorOptions": ["Розовый", "Сиреневый", "Голубой"],
     "inStock": true, "productionDays": 3, "deliveryIncluded": true, "assemblyIncluded": true,
     "installmentFrom": 1600,
-    "image": "https://picsum.photos/seed/divan-yulechka/600/400"
+    "image": "https://creatmebel.ru/assets/images/products/2956/detskij-divan-yulechka-mp-5.jpg",
+    "images": [
+      "https://creatmebel.ru/assets/images/products/2956/detskij-divan-yulechka-mp-5.jpg"
+    ]
   },
   {
     "id": "sku-006",
@@ -192,7 +217,12 @@ window.PRODUCTS = [
     "colorOptions": ["Серый", "Бежевый", "Терракотовый"],
     "inStock": true, "productionDays": 1, "deliveryIncluded": true, "assemblyIncluded": true,
     "installmentFrom": 1300,
-    "image": "https://picsum.photos/seed/kreslo-solo/600/400"
+    "image": "https://creatmebel.ru/assets/images/products/2994/grej-.jpg",
+    "images": [
+      "https://creatmebel.ru/assets/images/products/2994/grej-.jpg",
+      "https://creatmebel.ru/assets/images/products/2996/screenshot-1.jpg",
+      "https://creatmebel.ru/assets/images/products/3003/-729-ronald-729-official.jpg"
+    ]
   },
   {
     "id": "sku-007",
@@ -217,7 +247,11 @@ window.PRODUCTS = [
     "colorOptions": ["Дуб сонома", "Венге", "Белый"],
     "inStock": false, "productionDays": 14, "deliveryIncluded": true, "assemblyIncluded": true,
     "installmentFrom": 4800,
-    "image": "https://picsum.photos/seed/shkaf-premium-3/600/400"
+    "image": "https://creatmebel.ru/assets/images/products/2003/shkaf-kupe-premium-1.1jpg.jpg",
+    "images": [
+      "https://creatmebel.ru/assets/images/products/2003/shkaf-kupe-premium-1.1jpg.jpg",
+      "https://creatmebel.ru/assets/images/products/2003/shkaf-kupe-premium-1.2jpg.jpg"
+    ]
   },
   {
     "id": "sku-008",
@@ -242,7 +276,12 @@ window.PRODUCTS = [
     "colorOptions": ["Графит + белый", "Дуб сонома", "Дуб каньон"],
     "inStock": false, "productionDays": 21, "deliveryIncluded": true, "assemblyIncluded": true,
     "installmentFrom": 3900,
-    "image": "https://picsum.photos/seed/shkaf-trend-m/600/400"
+    "image": "https://creatmebel.ru/assets/images/products/2872/shkaf-kupe-trend-13-2-x-dvernyj.jpg",
+    "images": [
+      "https://creatmebel.ru/assets/images/products/2872/shkaf-kupe-trend-13-2-x-dvernyj.jpg",
+      "https://creatmebel.ru/assets/images/products/2872/shkaf-kupe-trend-13-1.jpg",
+      "https://creatmebel.ru/assets/images/products/2872/shkaf-kupe-trend-13-3.jpg"
+    ]
   },
   {
     "id": "sku-009",
@@ -267,7 +306,10 @@ window.PRODUCTS = [
     "colorOptions": ["Дуб сонома", "Белый", "Венге"],
     "inStock": true, "productionDays": 5, "deliveryIncluded": true, "assemblyIncluded": true,
     "installmentFrom": 2500,
-    "image": "https://picsum.photos/seed/komod-street-3/600/400"
+    "image": "https://creatmebel.ru/assets/images/products/3177/strit-3sl.jpeg",
+    "images": [
+      "https://creatmebel.ru/assets/images/products/3177/strit-3sl.jpeg"
+    ]
   },
   {
     "id": "sku-010",
@@ -292,7 +334,12 @@ window.PRODUCTS = [
     "colorOptions": ["Дуб сонома", "Венге", "Серый графит"],
     "inStock": true, "productionDays": 3, "deliveryIncluded": false, "assemblyIncluded": false,
     "installmentFrom": 1200,
-    "image": "https://picsum.photos/seed/tumba-solo/600/400"
+    "image": "https://creatmebel.ru/assets/images/products/1753/tumba-tv-1-1.jpg",
+    "images": [
+      "https://creatmebel.ru/assets/images/products/1753/tumba-tv-1-1.jpg",
+      "https://creatmebel.ru/assets/images/products/1754/tumba-tv-2-1.jpg",
+      "https://creatmebel.ru/assets/images/products/1755/tumba-tv-3-1.jpg"
+    ]
   },
   {
     "id": "sku-011",
@@ -316,7 +363,11 @@ window.PRODUCTS = [
     "colorOptions": ["Дуб сонома", "Венге", "Белый"],
     "inStock": true, "productionDays": 7, "deliveryIncluded": true, "assemblyIncluded": true,
     "installmentFrom": 2600,
-    "image": "https://picsum.photos/seed/prihozhaya-malevich-5/600/400"
+    "image": "https://creatmebel.ru/assets/images/products/4395/prixozhaya-malevich-5-2.jpg",
+    "images": [
+      "https://creatmebel.ru/assets/images/products/4395/prixozhaya-malevich-5-2.jpg",
+      "https://creatmebel.ru/assets/images/products/4395/prixozhaya-malevich-5.jpg"
+    ]
   },
   {
     "id": "sku-012",
@@ -343,7 +394,12 @@ window.PRODUCTS = [
     "colorOptions": ["Серая обивка", "Бежевая обивка", "Темно-синяя обивка"],
     "inStock": true, "productionDays": 5, "deliveryIncluded": true, "assemblyIncluded": true,
     "installmentFrom": 2600,
-    "image": "https://picsum.photos/seed/krovat-trento-1/600/400"
+    "image": "https://creatmebel.ru/assets/images/products/3981/trento-13.jpg",
+    "images": [
+      "https://creatmebel.ru/assets/images/products/3981/trento-13.jpg",
+      "https://creatmebel.ru/assets/images/products/3981/trento-12.jpg",
+      "https://creatmebel.ru/assets/images/products/3981/trento-11.jpg"
+    ]
   },
   {
     "id": "sku-013",
@@ -370,7 +426,12 @@ window.PRODUCTS = [
     "colorOptions": ["Белая обивка", "Серый графит", "Капучино"],
     "inStock": true, "productionDays": 3, "deliveryIncluded": true, "assemblyIncluded": true,
     "installmentFrom": 2400,
-    "image": "https://picsum.photos/seed/krovat-fokus/600/400"
+    "image": "https://creatmebel.ru/assets/images/products/4382/krovat-focus-yasen-shimo-svetlyj.jpg",
+    "images": [
+      "https://creatmebel.ru/assets/images/products/4382/krovat-focus-yasen-shimo-svetlyj.jpg",
+      "https://creatmebel.ru/assets/images/products/4382/krovat-focus-2.jpg",
+      "https://creatmebel.ru/assets/images/products/4382/krovat-focus-3.jpg"
+    ]
   },
   {
     "id": "sku-014",
@@ -397,7 +458,10 @@ window.PRODUCTS = [
     "colorOptions": ["Дуб сонома + черный", "Белый + бежевый", "Графит"],
     "inStock": false, "productionDays": 14, "deliveryIncluded": true, "assemblyIncluded": false,
     "installmentFrom": 3200,
-    "image": "https://picsum.photos/seed/obedennaya-nord/600/400"
+    "image": "https://creatmebel.ru/assets/images/products/1251/obedennaya-gruppa.jpg",
+    "images": [
+      "https://creatmebel.ru/assets/images/products/1251/obedennaya-gruppa.jpg"
+    ]
   },
   {
     "id": "sku-015",
@@ -422,17 +486,29 @@ window.PRODUCTS = [
     "colorOptions": ["Белый", "Белый + розовый", "Белый + голубой"],
     "inStock": true, "productionDays": 1, "deliveryIncluded": false, "assemblyIncluded": false,
     "installmentFrom": 1000,
-    "image": "https://picsum.photos/seed/komod-klass-det/600/400"
+    "image": "https://creatmebel.ru/assets/images/products/1923/detskij-komod-arka.jpg",
+    "images": [
+      "https://creatmebel.ru/assets/images/products/1923/detskij-komod-arka.jpg",
+      "https://creatmebel.ru/assets/images/products/1924/komod-briz.jpg",
+      "https://creatmebel.ru/assets/images/products/1925/komod-korvet.jpg"
+    ]
   }
 ];
 
-/* Галерея: 3 фотографии на товар (seed, seed-2, seed-3) */
+/* Галерея: используем реальные фото из YML или fallback */
+window.CM.PLACEHOLDER = 'assets/img/placeholder.svg';
+
 window.CM.gallery = function (slug) {
-  return [
-    'https://picsum.photos/seed/' + slug + '/600/400',
-    'https://picsum.photos/seed/' + slug + '-2/600/400',
-    'https://picsum.photos/seed/' + slug + '-3/600/400'
-  ];
+  var p = window.CM.getProduct(slug);
+  if (p && p.images && p.images.length > 0) return p.images;
+  if (p && p.image) return [p.image];
+  return [window.CM.PLACEHOLDER];
+};
+
+window.CM.imgError = function (el) {
+  el.onerror = null;
+  el.src = window.CM.PLACEHOLDER;
+  el.alt = 'Фото скоро появится';
 };
 
 window.CM.getProduct = function (slug) {

@@ -125,7 +125,7 @@
 
     return '<article class="card card-hover product-card flex flex-col" data-slug="' + escapeHtml(p.slug) + '">' +
       '<a href="product.html?id=' + encodeURIComponent(p.slug) + '" class="product-card-media relative block" aria-label="' + escapeHtml(p.name) + '">' +
-      '<img src="' + p.image + '" alt="' + escapeHtml(p.name) + '" loading="lazy" class="w-full aspect-[3/2] object-cover">' +
+      '<img src="' + p.image + '" alt="' + escapeHtml(p.name) + '" loading="lazy" class="w-full aspect-[3/2] object-cover" onerror="CM.imgError(this)">' +
       (badge ? '<span class="absolute top-3 left-3">' + badge + '</span>' : '') +
       '</a>' +
       '<div class="flex flex-col gap-2 p-4 grow">' +
@@ -1066,7 +1066,7 @@
         row.className = 'cart-line';
         row.innerHTML =
           '<a class="cart-line-img" href="product.html?id=' + encodeURIComponent(p.slug) + '">' +
-          '<img src="' + p.image + '" alt="' + escapeHtml(p.name) + '" loading="lazy"></a>' +
+          '<img src="' + p.image + '" alt="' + escapeHtml(p.name) + '" loading="lazy" onerror="CM.imgError(this)"></a>' +
           '<div class="flex flex-col gap-1 min-w-0">' +
           '<a class="font-semibold leading-snug hover:text-terracotta" href="product.html?id=' + encodeURIComponent(p.slug) + '">' + escapeHtml(p.name) + '</a>' +
           '<span class="text-xs text-greige">' + formatNumber(p.price) + ' ₽ · всё включено</span>' +

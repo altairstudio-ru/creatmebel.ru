@@ -61,9 +61,9 @@ window.PRODUCTS = [
     "image": "https://creatmebel.ru/assets/images/products/3037/oskar--1.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/3037/oskar--1.jpg",
-      "https://creatmebel.ru/assets/images/products/3037/oskar--2.jpg",
-      "https://creatmebel.ru/assets/images/products/3037/oskar--3.jpg",
-      "https://creatmebel.ru/assets/images/products/3037/oskar--4.jpg"
+      "https://creatmebel.ru/assets/images/products/3037/oskar.jpg",
+      "https://creatmebel.ru/assets/images/products/3037/oskar-.jpg",
+      "https://creatmebel.ru/assets/images/products/3037/oskar--2.jpg"
     ]
   },
   {
@@ -94,6 +94,7 @@ window.PRODUCTS = [
     "image": "https://creatmebel.ru/assets/images/products/3089/spejs-2.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/3089/spejs-2.jpg",
+      "https://creatmebel.ru/assets/images/products/3089/spejs-2-1.jpg",
       "https://creatmebel.ru/assets/images/products/3089/spejs-2-2.jpg",
       "https://creatmebel.ru/assets/images/products/3089/spejs-2-3.jpg",
       "https://creatmebel.ru/assets/images/products/3089/spejs-2-4.jpg"
@@ -127,8 +128,10 @@ window.PRODUCTS = [
     "image": "https://creatmebel.ru/assets/images/products/3968/richards-neo-azure-zerkalnyj-00.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/3968/richards-neo-azure-zerkalnyj-00.jpg",
-      "https://creatmebel.ru/assets/images/products/3968/richards-neo-azure-zerkalnyj-01.jpg",
-      "https://creatmebel.ru/assets/images/products/3968/richards-neo-azure-zerkalnyj-02.jpg"
+      "https://creatmebel.ru/assets/images/products/3968/richards-neo-azure-zerkalnyj-0.jpg",
+      "https://creatmebel.ru/assets/images/products/3968/richards-neo-azure-zerkalnyj-1.jpg",
+      "https://creatmebel.ru/assets/images/products/3968/richards-neo-azure-zerkalnyj-2.jpg",
+      "https://creatmebel.ru/assets/images/products/3968/richards-neo-azure-zerkalnyj-3.jpg"
     ]
   },
   {
@@ -159,8 +162,10 @@ window.PRODUCTS = [
     "image": "https://creatmebel.ru/assets/images/products/3021/lofter.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/3021/lofter.jpg",
+      "https://creatmebel.ru/assets/images/products/3021/lofter-1.jpg",
       "https://creatmebel.ru/assets/images/products/3021/lofter-2.jpg",
-      "https://creatmebel.ru/assets/images/products/3021/lofter-3.jpg"
+      "https://creatmebel.ru/assets/images/products/3021/lofter-3.jpg",
+      "https://creatmebel.ru/assets/images/products/3021/lofter-4.jpg"
     ]
   },
   {
@@ -188,9 +193,12 @@ window.PRODUCTS = [
     "colorOptions": ["Розовый", "Сиреневый", "Голубой"],
     "inStock": true, "productionDays": 3, "deliveryIncluded": true, "assemblyIncluded": true,
     "installmentFrom": 1600,
-    "image": "https://creatmebel.ru/assets/images/products/2956/detskij-divan-yulechka-mp-5.jpg",
+    "image": "https://creatmebel.ru/assets/images/products/2956/detskij-divan-yulechka-100-4-myagkij-podlokotnik.jpg",
     "images": [
-      "https://creatmebel.ru/assets/images/products/2956/detskij-divan-yulechka-mp-5.jpg"
+      "https://creatmebel.ru/assets/images/products/2956/detskij-divan-yulechka-100-4-myagkij-podlokotnik.jpg",
+      "https://creatmebel.ru/assets/images/products/2956/detskij-divan-yulechka-100-4-mp-2.jpg",
+      "https://creatmebel.ru/assets/images/products/2956/detskij-divan-yulechka-100-4-mp-3.jpg",
+      "https://creatmebel.ru/assets/images/products/2956/detskij-divan-yulechka-100-4-mp-4.jpg"
     ]
   },
   {
@@ -250,7 +258,7 @@ window.PRODUCTS = [
     "image": "https://creatmebel.ru/assets/images/products/2003/shkaf-kupe-premium-1.1jpg.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/2003/shkaf-kupe-premium-1.1jpg.jpg",
-      "https://creatmebel.ru/assets/images/products/2003/shkaf-kupe-premium-1.2jpg.jpg"
+      "https://creatmebel.ru/assets/images/products/2003/shkaf-kupe-premium-1.jpg"
     ]
   },
   {
@@ -279,8 +287,9 @@ window.PRODUCTS = [
     "image": "https://creatmebel.ru/assets/images/products/2872/shkaf-kupe-trend-13-2-x-dvernyj.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/2872/shkaf-kupe-trend-13-2-x-dvernyj.jpg",
-      "https://creatmebel.ru/assets/images/products/2872/shkaf-kupe-trend-13-1.jpg",
-      "https://creatmebel.ru/assets/images/products/2872/shkaf-kupe-trend-13-3.jpg"
+      "https://creatmebel.ru/assets/images/products/2872/shkaf-kupe-trend-15-2-x-dvernyj.jpg",
+      "https://creatmebel.ru/assets/images/products/2872/shkaf-kupe-trend-vishnevyj-glyanecz-2-x-dvernyj.jpg",
+      "https://creatmebel.ru/assets/images/products/2872/shkaf-kupe-trend-laguna-metallik-2-x-dvernyj.jpg"
     ]
   },
   {
@@ -366,7 +375,8 @@ window.PRODUCTS = [
     "image": "https://creatmebel.ru/assets/images/products/4395/prixozhaya-malevich-5-2.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/4395/prixozhaya-malevich-5-2.jpg",
-      "https://creatmebel.ru/assets/images/products/4395/prixozhaya-malevich-5.jpg"
+      "https://creatmebel.ru/assets/images/products/4395/prixozhaya-malevich-5.jpg",
+      "https://creatmebel.ru/assets/images/products/4395/prixozhaya-malevich-5-1.jpg"
     ]
   },
   {
@@ -398,6 +408,8 @@ window.PRODUCTS = [
     "images": [
       "https://creatmebel.ru/assets/images/products/3981/trento-13.jpg",
       "https://creatmebel.ru/assets/images/products/3981/trento-12.jpg",
+      "https://creatmebel.ru/assets/images/products/3981/trento-14.jpg",
+      "https://creatmebel.ru/assets/images/products/3981/trento-15.jpg",
       "https://creatmebel.ru/assets/images/products/3981/trento-11.jpg"
     ]
   },
@@ -429,8 +441,9 @@ window.PRODUCTS = [
     "image": "https://creatmebel.ru/assets/images/products/4382/krovat-focus-yasen-shimo-svetlyj.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/4382/krovat-focus-yasen-shimo-svetlyj.jpg",
-      "https://creatmebel.ru/assets/images/products/4382/krovat-focus-2.jpg",
-      "https://creatmebel.ru/assets/images/products/4382/krovat-focus-3.jpg"
+      "https://creatmebel.ru/assets/images/products/4382/krasnyj-chili.jpg",
+      "https://creatmebel.ru/assets/images/products/4382/krovat-fokus-severnoe-derevo-svetloe.jpg",
+      "https://creatmebel.ru/assets/images/products/4382/krovat-fokus-sosna-kremovaya.jpg"
     ]
   },
   {

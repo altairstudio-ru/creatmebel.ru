@@ -732,7 +732,10 @@
 
     if (mainImg) {
       mainImg.addEventListener('error', function () {
-        galleryEl.classList.add('hidden');
+        // Грациозный fallback: подменяем фото на плейсхолдер,
+        // не прячем галерею целиком и показываем подсказку с обновлением
+        C.imgError(mainImg);
+        galleryEl.classList.remove('hidden');
         var err = $('#product-gallery-error');
         if (err) err.classList.remove('hidden');
       });
@@ -748,7 +751,7 @@
         b.type = 'button';
         b.className = 'thumb' + (i === 0 ? ' thumb-active' : '');
         b.setAttribute('aria-label', 'Фото ' + (i + 1));
-        b.innerHTML = '<img src="' + src + '" alt="' + escapeHtml(p.name) + ' фото ' + (i + 1) + '" loading="lazy">';
+        b.innerHTML = '<img src="' + src + '" alt="' + escapeHtml(p.name) + ' фото ' + (i + 1) + '" loading="lazy" onerror="CM.imgError(this)">';
         b.addEventListener('click', function () { setPhoto(i, true); });
         thumbs.appendChild(b);
       });

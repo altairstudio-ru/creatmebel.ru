@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Креат Мебель — мягкая и корпусная мебель в Москве</title>
+  <meta name="description" content="Мягкая и корпусная мебель от производителя в Москве: всё включено — товар, доставка, подъём, сборка. Сроки 10–20 дней, гарантия 18 мес, рассрочка 0%.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Креат Мебель — мягкая и корпусная мебель в Москве">
+  <meta property="og:description" content="Цена всё включено: товар, доставка по Москве, подъём и сборка. Своё производство и проверенные фабрики. Гарантия 18 месяцев.">
+  <meta property="og:url" content="https://creatmebel.ru/">
+  <meta property="og:image" content="https://picsum.photos/seed/divan-richards/600/400">
+  <meta name="theme-color" content="#F8F5F0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="bg-cream font-sans text-ink antialiased body-pad-bottom">
+
+  <!-- ===== ШАПКА ===== -->
+  <header class="site-header" id="site-header">
+    <div class="container-main header-inner">
+      <a class="brand" href="index.html" aria-label="Креат Мебель — на главную">
+        <span class="brand-name">КРЕАТ<em>.</em></span>
+        <span class="brand-sub">мебель от производителя</span>
+      </a>
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="catalog.html" class="nav-link" id="nav-catalog" aria-haspopup="true">
+          Каталог
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
+        <a href="production.html" class="nav-link">Производство</a>
+        <a href="delivery.html" class="nav-link">Доставка и оплата</a>
+        <a href="contacts.html" class="nav-link">Контакты</a>
+      </nav>
+      <div class="header-actions flex items-center gap-1 ms-auto">
+        <a href="tel:+79206225195" class="header-phone">+7 (920) 622-51-95</a>
+        <a href="cart.html" class="icon-btn" aria-label="Корзина">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1.6"/><circle cx="19" cy="21" r="1.6"/><path d="M2 3h3l2.6 12.4a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L22 7H6"/></svg>
+          <span class="cart-count hidden">0</span>
+        </a>
+        <button class="icon-btn lg:hidden" id="burger" aria-label="Открыть меню" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- mega-menu -->
+    <div id="mega-menu" class="mega" aria-label="Каталог — категории">
+      <div>
+        <h4>Мягкая мебель</h4>
+        <a class="mega-link" href="catalog.html?cat=soft&amp;sub=divany">Диваны <small>прямые · угловые · детские</small></a>
+        <a class="mega-link" href="catalog.html?cat=soft&amp;sub=kresla">Кресла и пуфики <small></small></a>
+      </div>
+      <div>
+        <h4>Корпусная мебель</h4>
+        <a class="mega-link" href="catalog.html?cat=corpus&amp;sub=shkafy">Шкафы <small>купе и распашные</small></a>
+        <a class="mega-link" href="catalog.html?cat=corpus&amp;sub=gostinaya">Гостиная <small>комоды, тумбы, стенки</small></a>
+        <a class="mega-link" href="catalog.html?cat=corpus&amp;sub=prihozhaya">Прихожая <small></small></a>
+        <a class="mega-link" href="catalog.html?cat=corpus&amp;sub=spalnya">Спальня <small>кровати и гарнитуры</small></a>
+        <a class="mega-link" href="catalog.html?cat=corpus&amp;sub=detskaya">Детская <small></small></a>
+        <a class="mega-link" href="catalog.html?cat=corpus&amp;sub=kuhnya">Кухня <small>обеденные группы</small></a>
+      </div>
+      <div class="mega-cta rounded-(--radius-md) bg-terracotta-50 p-4">
+        <a href="#" class="font-semibold text-terracotta-600 hover:underline" data-open-modal="size">⚡ Мебель по вашим размерам — просчёт за 15 минут</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- мобильное меню -->
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-panel">
+      <button class="modal-close" id="mobile-menu-close" aria-label="Закрыть меню">×</button>
+      <a href="index.html" class="brand mb-4"><span class="brand-name">КРЕАТ<em>.</em></span><span class="brand-sub">мебель от производителя</span></a>
+      <a href="catalog.html" class="mobile-menu-link">Каталог</a>
+      <a href="production.html" class="mobile-menu-link">Производство</a>
+      <a href="delivery.html" class="mobile-menu-link">Доставка и оплата</a>
+      <a href="contacts.html" class="mobile-menu-link">Контакты</a>
+      <button type="button" class="btn btn-primary btn-full mt-3" data-open-modal="size">Мебель по моим размерам</button>
+      <a href="tel:+79206225195" class="mobile-menu-phone flex flex-col gap-1 p-4 bg-sand rounded-(--radius-md)">
+        <span class="font-bold text-lg">+7 (920) 622-51-95</span>
+        <span class="text-sm text-greige">Перезвоним за 15 минут · 9:00–20:00</span>
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="section-pad pt-10 md:pt-16">
+      <div class="container-main grid gap-8 md:grid-cols-2 items-center">
+        <div class="hero-text flex flex-col gap-6">
+          <p class="overline">Мебель от производителя · Москва</p>
+          <h1 class="section-title text-[clamp(28px,5vw,52px)] leading-[1.08]">Мягкая и корпусная мебель от производителя</h1>
+          <p class="text-greige text-lg leading-relaxed">Цена — всё включено: товар, доставка по Москве, подъём и сборка. Своё производство и проверенные фабрики. Сроки 10–20 дней, гарантия 18 месяцев.</p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="catalog.html" class="btn btn-primary btn-lg" data-src="hero">Смотреть каталог</a>
+            <button type="button" class="btn btn-ghost btn-lg" data-open-modal="size" data-src="hero">Рассчитать по своим размерам</button>
+          </div>
+          <p class="text-sm text-greige">★ 4.9 — средняя оценка · 2 000+ заказов · рассрочка 0-0-12 · доставка 10–20 дней</p>
+        </div>
+        <div>
+          <img src="https://picsum.photos/seed/divan-richards/900/680" alt="Угловой диван Ричардс в гостиной, ткань велюр, песочный" class="w-full rounded-(--radius-lg) object-cover aspect-[4/3]" loading="eager">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== УТП ===== -->
+    <section class="section-pad pt-0">
+      <div class="container-main grid gap-4 md:grid-cols-3">
+        <article class="card p-6 flex flex-col gap-3 card-hover">
+          <span class="inline-flex w-12 h-12 rounded-full bg-terracotta-50 items-center justify-center text-xl" aria-hidden="true">◎</span>
+          <h2 class="font-display text-lg font-semibold">Цена всё включено</h2>
+          <p class="text-greige leading-relaxed">Ткань, доставка, подъём и сборка — в одной цене. Никаких доплат «привезли и собрали отдельно».</p>
+        </article>
+        <article class="card p-6 flex flex-col gap-3 card-hover">
+          <span class="inline-flex w-12 h-12 rounded-full bg-terracotta-50 items-center justify-center text-xl" aria-hidden="true">✦</span>
+          <h2 class="font-display text-lg font-semibold">Своё производство</h2>
+          <p class="text-greige leading-relaxed">Показываем производство на видео и присылаем фото вашего заказа на этапах. Вы знаете, кто делает вашу мебель.</p>
+        </article>
+        <article class="card p-6 flex flex-col gap-3 card-hover">
+          <span class="inline-flex w-12 h-12 rounded-full bg-terracotta-50 items-center justify-center text-xl" aria-hidden="true">◷</span>
+          <h2 class="font-display text-lg font-semibold">Сроки и трекинг</h2>
+          <p class="text-greige leading-relaxed">Фиксированные сроки: серийная мебель — 10–20 дней, под размер — 20–45 дней. Статус заказа — по СМС.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== КАТАЛОГ ===== -->
+    <section class="section-pad bg-sand/70">
+      <div class="container-main flex flex-col gap-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <h2 class="section-title text-3xl md:text-4xl">Каталог</h2>
+          <div class="flex gap-1" role="tablist" aria-label="Суперкатегории">
+            <button id="cat-tab-soft" class="tab tab-active" role="tab" aria-selected="true">Мягкая мебель</button>
+            <button id="cat-tab-corpus" class="tab" role="tab" aria-selected="false">Корпусная мебель</button>
+          </div>
+        </div>
+
+        <div id="category-panel">
+          <!-- мягкая -->
+          <div id="panel-soft">
+            <div class="h-scroll md:grid-cols-3">
+              <a href="catalog.html?cat=soft&amp;sub=divany" class="cat-tile">
+                <img src="https://picsum.photos/seed/divan-richards/500/320" alt="Диваны" loading="lazy">
+                <div class="cat-tile-body"><div class="cat-tile-name">Диваны</div><div class="cat-tile-count">· 12 моделей</div></div>
+              </a>
+              <a href="catalog.html?cat=soft&amp;sub=kresla" class="cat-tile">
+                <img src="https://picsum.photos/seed/kreslo-solo/500/320" alt="Кресла и пуфики" loading="lazy">
+                <div class="cat-tile-body"><div class="cat-tile-name">Кресла и пуфики</div><div class="cat-tile-count">· 6 моделей</div></div>
+              </a>
+              <a href="catalog.html?cat=soft" class="cat-tile">
+                <img src="https://picsum.photos/seed/krovat-trento-1/500/320" alt="Мягкие кровати" loading="lazy">
+                <div class="cat-tile-body"><div class="cat-tile-name">Мягкие кровати</div><div class="cat-tile-count">· 8 моделей</div></div>
+              </a>
+            </div>
+          </div>
+          <!-- корпусная -->
+          <div id="panel-corpus" class="hidden">
+            <div class="h-scroll md:grid-cols-3">
+              <a href="catalog.html?cat=corpus&amp;sub=shkafy" class="cat-tile">
+                <img src="https://picsum.photos/seed/shkaf-premium-3/500/320" alt="Шкафы" loading="lazy">
+                <div class="cat-tile-body"><div class="cat-tile-name">Шкафы</div><div class="cat-tile-count">· 18 моделей</div></div>
+              </a>
+              <a href="catalog.html?cat=corpus&amp;sub=gostinaya" class="cat-tile">
+                <img src="https://picsum.photos/seed/komod-street-3/500/320" alt="Гостиная" loading="lazy">
+                <div class="cat-tile-body"><div class="cat-tile-name">Гостиная</div><div class="cat-tile-count">· 14 моделей</div></div>
+              </a>
+              <a href="catalog.html?cat=corpus&amp;sub=prihozhaya" class="cat-tile">
+                <img src="https://picsum.photos/seed/prihozhaya-malevich-5/500/320" alt="Прихожая" loading="lazy">
+                <div class="cat-tile-body"><div class="cat-tile-name">Прихожая</div><div class="cat-tile-count">· 10 моделей</div></div>
+              </a>
+              <a href="catalog.html?cat=corpus&amp;sub=spalnya" class="cat-tile">
+                <img src="https://picsum.photos/seed/krovat-fokus/500/320" alt="Спальня" loading="lazy">
+                <div class="cat-tile-body"><div class="cat-tile-name">Спальня</div><div class="cat-tile-count">· 12 моделей</div></div>
+              </a>
+              <a href="catalog.html?cat=corpus&amp;sub=detskaya" class="cat-tile">
+                <img src="https://picsum.photos/seed/komod-klass-det/500/320" alt="Детская" loading="lazy">
+                <div class="cat-tile-body"><div class="cat-tile-name">Детская</div><div class="cat-tile-count">· 10 моделей</div></div>
+              </a>
+              <a href="catalog.html?cat=corpus&amp;sub=kuhnya" class="cat-tile">
+                <img src="https://picsum.photos/seed/obedennaya-nord/500/320" alt="Кухня" loading="lazy">
+                <div class="cat-tile-body"><div class="cat-tile-name">Кухня</div><div class="cat-tile-count">· 12 моделей</div></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ХИТЫ ===== -->
+    <section class="section-pad">
+      <div class="container-main flex flex-col gap-6">
+        <div class="flex items-end justify-between gap-4">
+          <h2 class="section-title text-3xl md:text-4xl">Популярное</h2>
+          <a href="catalog.html" class="btn btn-ghost" data-src="home-hits">Смотреть всё →</a>
+        </div>
+        <div id="hits-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"></div>
+      </div>
+    </section>
+
+    <!-- ===== БАННЕР ПРОСЧЁТА ===== -->
+    <section class="section-pad pt-0">
+      <div class="container-main">
+        <div class="rounded-(--radius-lg) bg-terracotta text-white p-8 md:p-12 grid gap-6 md:grid-cols-[1fr_auto] items-center overflow-hidden relative">
+          <div class="flex flex-col gap-3 max-w-xl">
+            <p class="overline" style="color:#F3C4AE">Просчёт за 15 минут · бесплатно</p>
+            <h2 class="font-display text-2xl md:text-4xl font-semibold leading-tight">Мебель по вашим размерам</h2>
+            <p class="text-white/85 leading-relaxed">Нестандартная ниша или проём? Пришлёте фото или план — предложим решение и точную цену. Изготовление 20–45 дней, качество и гарантия те же.</p>
+          </div>
+          <div class="flex flex-col gap-3 w-full md:w-auto">
+            <button type="button" class="btn btn-lg bg-white text-terracotta hover:bg-terracotta-50" data-open-modal="size" data-src="hero-banner">Заказать просчёт</button>
+            <a href="catalog.html" class="btn btn-lg btn-outline !border-white/40 !text-white hover:!border-white" data-src="hero-banner">Смотреть каталог</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ПРОИЗВОДСТВО ===== -->
+    <section class="section-pad bg-sand/70">
+      <div class="container-main grid gap-8 md:grid-cols-2 items-center">
+        <div class="flex flex-col gap-4 order-1">
+          <h2 class="section-title text-3xl md:text-4xl">Показываем, как делаем</h2>
+          <p class="text-greige leading-relaxed text-lg">Своё производство и проверенные фабрики. Видео из цеха, контроль качества и фото вашего заказа на этапах: раскрой, сборка, упаковка.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip chip-idle">98% заказов в срок</span>
+            <span class="chip chip-idle">3 проверки качества</span>
+          </div>
+          <a href="production.html" class="btn btn-ghost self-start">О производстве →</a>
+        </div>
+        <div class="video-card order-2">
+          <img src="https://picsum.photos/seed/production-shop/900/560" alt="Цех производства мебели" loading="lazy">
+          <button class="play-btn" type="button" aria-label="Смотреть видео-тур по цеху">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ОТЗЫВЫ ===== -->
+    <section class="section-pad">
+      <div class="container-main flex flex-col gap-6">
+        <h2 class="section-title text-3xl md:text-4xl">Нас рекомендуют</h2>
+        <div class="grid gap-4 md:grid-cols-3">
+          <article class="card p-6 flex flex-col gap-3 card-hover">
+            <div class="flex items-center justify-between">
+              <span class="font-semibold">Анна</span>
+              <span class="text-sm text-greige">★ 5.0 · Москва</span>
+            </div>
+            <p class="text-greige leading-relaxed">Заказывали диван «Ричардс» в июле. Привезли точно в срок, собрали за час. Фото с производства прислали — было интересно смотреть, как делают наш диван.</p>
+          </article>
+          <article class="card p-6 flex flex-col gap-3 card-hover">
+            <div class="flex items-center justify-between">
+              <span class="font-semibold">Игорь</span>
+              <span class="text-sm text-greige">★ 4.8 · Химки</span>
+            </div>
+            <p class="text-greige leading-relaxed">Шкаф по своим размерам сделали за 5 недель. Статусы приходили на СМС, доставка — точно в оговорённое окно.</p>
+          </article>
+          <article class="card p-6 flex flex-col gap-3 card-hover">
+            <div class="flex items-center justify-between">
+              <span class="font-semibold">Ольга</span>
+              <span class="text-sm text-greige">★ 4.9 · Балашиха</span>
+            </div>
+            <p class="text-greige leading-relaxed">Взяли кресло и пуфик из наличия. Дали образцы ткани на выбор, подсказали, как ухаживать. Ткань плотная, каркас крепкий.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ДОСТАВКА-ТИЗЕР ===== -->
+    <section class="section-pad bg-navy text-white">
+      <div class="container-main flex flex-col gap-8">
+        <h2 class="font-display text-2xl md:text-4xl font-semibold leading-tight max-w-2xl">Заберём заботу о доставке на себя</h2>
+        <div class="grid gap-6 md:grid-cols-4">
+          <div class="flex flex-col gap-2">
+            <span class="text-2xl" aria-hidden="true">🚚</span>
+            <h3 class="font-semibold">Доставка</h3>
+            <p class="text-white/70 leading-relaxed">В пределах МКАД включена в цену при заказе от 15 000 ₽. За МКАД — 40 ₽/км, честно.</p>
+          </div>
+          <div class="flex flex-col gap-2">
+            <span class="text-2xl" aria-hidden="true">🪜</span>
+            <h3 class="font-semibold">Подъём</h3>
+            <p class="text-white/70 leading-relaxed">На этаж с лифтом — включён. Без лифта — честно 350 ₽/этаж.</p>
+          </div>
+          <div class="flex flex-col gap-2">
+            <span class="text-2xl" aria-hidden="true">🔧</span>
+            <h3 class="font-semibold">Сборка</h3>
+            <p class="text-white/70 leading-relaxed">В подарок на диваны и мягкие кровати. Корпусная мебель — 500–1 500 ₽.</p>
+          </div>
+          <div class="flex flex-col gap-2">
+            <span class="text-2xl" aria-hidden="true">📲</span>
+            <h3 class="font-semibold">Трекинг</h3>
+            <p class="text-white/70 leading-relaxed">СМС-статусы: производство → сборка → доставка. Знаете, где ваш заказ.</p>
+          </div>
+        </div>
+        <a href="delivery.html" class="btn btn-lg self-start bg-white text-navy hover:bg-sand" data-src="home-delivery">Доставка и оплата →</a>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section-pad">
+      <div class="container-main flex flex-col gap-6 max-w-3xl">
+        <h2 class="section-title text-3xl">Частые вопросы</h2>
+        <details class="acc">
+          <summary>Какие сроки изготовления и доставки?</summary>
+          <div class="acc-body">Серийная мебель и наличие — 10–20 дней. Мебель по вашим размерам — 20–45 дней. Через 1–2 дня после готовности привозим и собираем. Присылаем СМС-статусы и фото с производства на каждом этапе.</div>
+        </details>
+        <details class="acc">
+          <summary>Что значит «цена всё включено»?</summary>
+          <div class="acc-body">В цену входят товар, доставка по Москве (в пределах МКАД при заказе от 15 000 ₽), подъём на этаж с лифтом и сборка. Доплата только за подъём без лифта (350 ₽/этаж) и за доставку за МКАД (40 ₽/км). Всё называется до заказа, а не после.</div>
+        </details>
+        <details class="acc">
+          <summary>Как работает рассрочка 0-0-12?</summary>
+          <div class="acc-body">0% первый взнос, 0% переплат, до 12 месяцев. Например, диван за 45 200 ₽ — 3 767 ₽ в месяц. Заявка за 2 минуты, одобрение за 5 минут.</div>
+        </details>
+        <details class="acc">
+          <summary>Можно ли сделать мебель по своим размерам?</summary>
+          <div class="acc-body">Да. Ниша под лестницей, проём 87 см, нестандартная высота — не проблема. Пришлите размеры и фото (можно план комнаты) — просчёт бесплатный за 15 минут.</div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== ФУТЕР ===== -->
+  <footer class="site-footer bg-sand">
+    <div class="container-main py-12 grid gap-8 md:grid-cols-[1.2fr_1fr_1fr_1.2fr]">
+      <div class="flex flex-col gap-3">
+        <a href="index.html" class="brand"><span class="brand-name">КРЕАТ<em>.</em></span><span class="brand-sub">мебель от производителя</span></a>
+        <p class="text-sm text-greige leading-relaxed max-w-xs">Мягкая и корпусная мебель в Москве: своё производство и проверенные фабрики. Цена — всё включено.</p>
+      </div>
+      <nav class="flex flex-col gap-2" aria-label="Каталог в подвале">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-greige mb-1">Каталог</h3>
+        <a href="catalog.html?cat=soft" class="footer-link">Мягкая мебель</a>
+        <a href="catalog.html?cat=corpus" class="footer-link">Корпусная мебель</a>
+        <a href="catalog.html" class="footer-link">Все товары</a>
+      </nav>
+      <nav class="flex flex-col gap-2" aria-label="Покупателям">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-greige mb-1">Покупателям</h3>
+        <a href="delivery.html" class="footer-link">Доставка и оплата</a>
+        <a href="production.html" class="footer-link">Производство</a>
+        <a href="delivery.html#garantiya" class="footer-link">Гарантия</a>
+        <button type="button" class="footer-link text-left" data-open-modal="size">Просчёт по размерам</button>
+      </nav>
+      <div class="flex flex-col gap-2">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-greige mb-1">Контакты</h3>
+        <a href="tel:+79206225195" class="font-bold text-lg hover:text-terracotta">+7 (920) 622-51-95</a>
+        <a href="mailto:info@creatmebel.ru" class="footer-link">info@creatmebel.ru</a>
+        <span class="text-sm text-greige">Москва · 9:00–20:00 без выходных</span>
+        <div class="flex gap-2 mt-1">
+          <a href="https://wa.me/79206225195" target="_blank" rel="noopener" class="icon-btn !w-11 !h-11 bg-white" aria-label="WhatsApp">💬</a>
+          <a href="https://vk.com/creatmebel_ru" target="_blank" rel="noopener" class="icon-btn !w-11 !h-11 bg-white" aria-label="ВКонтакте">VK</a>
+          <a href="https://ok.ru/creatmebel" target="_blank" rel="noopener" class="icon-btn !w-11 !h-11 bg-white" aria-label="Одноклассники">OK</a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-line/70">
+      <div class="container-main py-5 flex flex-col md:flex-row gap-2 justify-between text-sm text-greige">
+        <span>© 2015–2025 Креат Мебель</span>
+        <a href="#" class="hover:text-terracotta">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Нижний таб-бар (mobile) ===== -->
+  <nav class="tabbar" aria-label="Мобильная навигация">
+    <a href="index.html" class="tabbar-item is-active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+      Главная
+    </a>
+    <a href="catalog.html" class="tabbar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+      Каталог
+    </a>
+    <a href="cart.html" class="tabbar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1.6"/><circle cx="19" cy="21" r="1.6"/><path d="M2 3h3l2.6 12.4a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L22 7H6"/></svg>
+      Корзина <span class="cart-count hidden">0</span>
+    </a>
+    <button type="button" class="tabbar-item" data-open-modal="size">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M3 12h18M3 12l3-3M3 12l3 3M21 12l-3-3M21 12l-3 3"/></svg>
+      Просчёт
+    </button>
+    <a href="contacts.html" class="tabbar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+      Контакты
+    </a>
+  </nav>
+
+  <!-- ===== Модалка «Мебель по вашим размерам» ===== -->
+  <div id="modal-size" class="modal modal-hidden" role="dialog" aria-modal="true" aria-labelledby="size-title">
+    <div class="modal-backdrop"></div>
+    <div class="modal-panel">
+      <button class="modal-close" data-close aria-label="Закрыть">×</button>
+      <div id="size-form-wrap">
+        <h2 id="size-title" class="font-display text-2xl font-semibold mb-2">Мебель по вашим размерам</h2>
+        <p class="text-greige mb-5">Рассчитаем бесплатно за 15 минут. Даже если ниша нестандартная — пришлёте фото или план, предложим решение.</p>
+        <form data-form="size" data-form-success="#size-success" class="flex flex-col gap-4">
+          <div class="field-wrap">
+            <span class="filter-group-title">Тип мебели</span>
+            <div id="size-type-chips" class="flex flex-wrap gap-2"></div>
+          </div>
+          <div class="grid grid-cols-3 gap-3">
+            <div class="field-wrap">
+              <label class="text-sm text-greige" for="size-w">Ширина, мм</label>
+              <input id="size-w" class="field" type="number" inputmode="numeric" placeholder="2100">
+            </div>
+            <div class="field-wrap">
+              <label class="text-sm text-greige" for="size-h">Высота, мм</label>
+              <input id="size-h" class="field" type="number" inputmode="numeric" placeholder="2400">
+            </div>
+            <div class="field-wrap">
+              <label class="text-sm text-greige" for="size-d">Глубина, мм</label>
+              <input id="size-d" class="field" type="number" inputmode="numeric" placeholder="600">
+            </div>
+          </div>
+          <p class="text-xs text-greige -mt-2">Можно примерно — размеры уточним при замере.</p>
+          <div class="field-wrap">
+            <label class="text-sm text-greige" for="size-file">Фото или план комнаты</label>
+            <div class="file-drop">
+              <label for="size-file" class="btn btn-outline btn-sm">Выбрать файл</label>
+              <input id="size-file" class="hidden" type="file" accept="image/*,.pdf">
+              <span class="file-name"></span>
+            </div>
+            <span class="text-xs text-greige">Фото ускорит просчёт. Можно без него.</span>
+          </div>
+          <div class="field-wrap">
+            <label class="text-sm text-greige" for="size-phone">Телефон *</label>
+            <input id="size-phone" class="field" type="tel" required placeholder="+7 (900) 000-00-00" autocomplete="tel">
+            <span class="field-hint hidden"></span>
+          </div>
+          <div class="field-wrap">
+            <label class="text-sm text-greige" for="size-name">Имя</label>
+            <input id="size-name" class="field" type="text" placeholder="Как к вам обращаться">
+          </div>
+          <label class="flex items-start gap-2 text-sm text-greige cursor-pointer">
+            <input type="checkbox" checked class="mt-1 w-4 h-4 accent-[#C25E3C]">
+            Согласен на обработку персональных данных
+          </label>
+          <button type="submit" class="btn btn-primary btn-lg btn-full">Получить расчёт</button>
+        </form>
+      </div>
+      <div id="size-success" class="confirm-box hidden">
+        <span class="confirm-icon" aria-hidden="true">✓</span>
+        <h3 class="font-display text-lg font-semibold">Заявка отправлена</h3>
+        <p>Перезвоним за 15 минут (9:00–20:00). Номер обращения №<span class="font-bold">4 219</span></p>
+        <a href="https://wa.me/79206225195" target="_blank" rel="noopener" class="btn btn-olive">Дублировать в WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

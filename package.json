@@ -1,0 +1,26 @@
+{
+  "name": "prototype",
+  "version": "1.0.0",
+  "description": "Прототип дизайна интернет-магазина корпусной и мягкой мебели от производителя (Москва).",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./assets/css/main.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./assets/css/main.css --watch",
+    "dev": "python -m http.server 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altairstudio-ru/creatmebel.ru.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/altairstudio-ru/creatmebel.ru/issues"
+  },
+  "homepage": "https://github.com/altairstudio-ru/creatmebel.ru#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

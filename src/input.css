@@ -549,6 +549,110 @@ html:not(.scheme-classic) .scheme-toggle-indicator::after { transform: translate
 /* Ссылки в подвале */
 .footer-link { display: inline-block; font-size: 15px; color: var(--color-greige); transition: color .18s ease; }
 .footer-link:hover { color: var(--color-terracotta); }
+
+/* ============================================================
+   M1 v3: плашки неподтверждённых фактов [ТРЕБУЕТСЯ ОТ КЛИЕНТА]
+   ============================================================ */
+.req-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 11px; font-weight: 700; letter-spacing: .02em;
+  color: #8A4A2B; background: #FBE9D9;
+  border: 1px dashed rgba(194, 94, 60, .45);
+  border-radius: 999px; padding: 2px 10px;
+  white-space: nowrap;
+}
+.req-inline {
+  font-size: 11px; font-weight: 700; color: #A84E30;
+  background: #FBE9D9; border-radius: 6px; padding: 1px 6px;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   M1 v3: селектор региона
+   ============================================================ */
+.region-select {
+  appearance: none; -webkit-appearance: none;
+  display: inline-flex; align-items: center; gap: 6px;
+  min-height: 40px; padding: 0 34px 0 14px;
+  border-radius: 999px; border: 1px solid var(--color-line);
+  background: var(--color-card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23857C71' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center;
+  font-size: 13px; font-weight: 600; color: var(--color-ink);
+  transition: border-color .2s ease;
+  cursor: pointer;
+}
+.region-select:hover { border-color: var(--color-terracotta); }
+.region-select:focus { outline: none; border-color: var(--color-terracotta); }
+
+/* ============================================================
+   M1 v3: степпер checkout (шаги 1–3)
+   ============================================================ */
+.stepper { display: flex; align-items: center; gap: 10px; }
+.stepper-step {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-weight: 600; font-size: 14px; color: var(--color-greige);
+  white-space: nowrap;
+}
+.stepper-num {
+  width: 32px; height: 32px; border-radius: 999px; flex: 0 0 auto;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--color-sand); color: var(--color-greige);
+  font-family: var(--font-display); font-weight: 700; font-size: 13px;
+  transition: background .2s ease, color .2s ease;
+}
+.stepper-line { flex: 1 1 auto; height: 2px; background: var(--color-line); min-width: 20px; border-radius: 2px; }
+.stepper-step.is-done .stepper-num { background: var(--color-olive); color: #fff; }
+.stepper-step.is-done { color: var(--color-olive); }
+.stepper-step.is-active { color: var(--color-ink); }
+.stepper-step.is-active .stepper-num { background: var(--color-terracotta); color: #fff; }
+
+/* ============================================================
+   M1 v3: трекинг заказа (вертикальный таймлайн)
+   ============================================================ */
+.tracking-timeline { display: flex; flex-direction: column; }
+.tracking-item { display: flex; gap: 14px; position: relative; padding-bottom: 26px; }
+.tracking-item:last-child { padding-bottom: 0; }
+.tracking-dot {
+  flex: 0 0 auto; width: 20px; height: 20px; border-radius: 999px;
+  border: 3px solid var(--color-line); background: #fff; position: relative; z-index: 1;
+  margin-top: 2px;
+}
+.tracking-item::before {
+  content: ''; position: absolute; left: 9px; top: 26px; bottom: 0;
+  width: 2px; background: var(--color-line); border-radius: 2px;
+}
+.tracking-item:last-child::before { display: none; }
+.tracking-item.is-done .tracking-dot { border-color: var(--color-olive); background: var(--color-olive); }
+.tracking-item.is-active .tracking-dot {
+  border-color: var(--color-terracotta); background: var(--color-terracotta);
+  box-shadow: 0 0 0 4px rgba(194, 94, 60, .18);
+}
+.tracking-title { font-weight: 700; font-size: 15px; color: var(--color-ink); }
+.tracking-meta { font-size: 13px; color: var(--color-greige); }
+.tracking-item.is-done .tracking-title { color: var(--color-olive); }
+.tracking-item.is-done .tracking-meta { color: var(--color-greige); }
+
+/* ============================================================
+   M1 v3: радио-карточки (оплата в checkout)
+   ============================================================ */
+.radio-card {
+  position: relative; display: flex; align-items: flex-start; gap: 12px;
+  padding: 16px 18px; border-radius: var(--radius-md);
+  border: 2px solid var(--color-line); background: var(--color-card);
+  cursor: pointer; transition: border-color .2s ease, box-shadow .2s ease;
+}
+.radio-card:hover { border-color: rgba(194, 94, 60, .4); }
+.radio-card input { position: absolute; opacity: 0; pointer-events: none; }
+.radio-mark {
+  flex: 0 0 auto; width: 22px; height: 22px; border-radius: 999px;
+  border: 2px solid var(--color-line); background: #fff; position: relative; margin-top: 2px;
+  transition: border-color .2s ease;
+}
+.radio-card input:checked + .radio-mark { border-color: var(--color-terracotta); }
+.radio-card input:checked + .radio-mark::after {
+  content: ''; position: absolute; inset: 4px; border-radius: 999px; background: var(--color-terracotta);
+}
+.radio-card:has(input:checked) { border-color: var(--color-terracotta); box-shadow: 0 0 0 3px rgba(194, 94, 60, .12); }
+
 /* Защита от горизонтального скролла (mobile off-canvas) */
 html, body { overflow-x: hidden; }
 body { position: relative; }

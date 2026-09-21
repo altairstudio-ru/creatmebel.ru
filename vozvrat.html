@@ -3,13 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Как мы делаем мебель — Креат Мебель</title>
-  <meta name="description" content="Честно о том, как мы делаем мебель: работаем с проверенными фабриками-партнёрами, присылаем фото заказа на этапах. Гарантия 1 год, рейтинг ★ 5 на Яндекс.">
+  <title>Возврат и отмена заказа — Креат Мебель</title>
+  <meta name="description" content="Возврат мебели в течение 7 дней, если товар не подошёл. Отмена заказа до начала производства — бесплатно. Вывоз и сроки возврата денег — по закону.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Как мы делаем мебель — Креат Мебель">
-  <meta property="og:description" content="Проверенные фабрики-партнёры, фотоотчёт по каждому заказу, гарантия 1 год. Без «своего производства» — честно о партнёрской модели.">
-  <meta property="og:url" content="https://creatmebel.ru/production/">
-  <meta property="og:image" content="https://picsum.photos/seed/proizvodstvo-1/600/400">
+  <meta property="og:title" content="Возврат и отмена заказа — Креат Мебель">
+  <meta property="og:description" content="Не подошёл размер или цвет — вернём в течение 7 дней. Передумали до начала производства — отмена бесплатная.">
+  <meta property="og:url" content="https://creatmebel.ru/vozvrat/">
   <meta name="theme-color" content="#F8F5F0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +29,7 @@
           Каталог
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
         </a>
-        <a href="production.html" class="nav-link is-active">Производство</a>
+        <a href="production.html" class="nav-link">Производство</a>
         <a href="delivery.html" class="nav-link">Доставка и оплата</a>
         <a href="contacts.html" class="nav-link">Контакты</a>
       </nav>
@@ -69,7 +68,7 @@
         <a class="mega-link" href="catalog.html?cat=corpus&amp;sub=kuhnya">Кухня</a>
       </div>
       <div class="mega-cta rounded-(--radius-md) bg-terracotta-50 p-4">
-        <a href="#" class="font-semibold text-terracotta-600 hover:underline" data-open-modal="size">⚡ Мебель по вашим размерам — просчёт за 15 минут</a>
+        <a href="raschet.html" class="font-semibold text-terracotta-600 hover:underline">⚡ Мебель по вашим размерам — просчёт за 15 минут</a>
       </div>
     </div>
   </header>
@@ -98,152 +97,76 @@
   <main>
     <div class="container-main">
       <nav class="crumbs" aria-label="Хлебные крошки">
-        <a href="index.html">Главная</a><span class="sep">/</span><span class="crumb-current">Как мы делаем мебель</span>
+        <a href="index.html">Главная</a><span class="sep">/</span><span class="crumb-current">Возврат</span>
       </nav>
       <div class="pt-4 pb-2 flex flex-col gap-2">
-        <p class="overline">Честно о модели работы</p>
-        <h1 class="section-title text-3xl md:text-4xl">Как мы делаем мебель</h1>
-        <p class="text-greige max-w-2xl">У нас нет своего производства. Зато есть проверенные фабрики-партнёры, за которыми мы следим лично: выбираем по трём критериям, сопровождаем заказ фотоотчётом и отвечаем за результат. Гарантия — 1 год.</p>
+        <p class="overline">Честно о возвратах и отмене</p>
+        <h1 class="section-title text-3xl md:text-4xl">Возврат и отмена заказа</h1>
+        <p class="text-greige max-w-2xl">Если товар не подошёл — вернём в течение 7 дней. Если передумали до начала производства — отмена бесплатная. Ниже — условия и порядок действий.</p>
       </div>
     </div>
 
-    <!-- ===== Видео-герой ===== -->
-    <section class="container-main py-8">
-      <div class="relative rounded-(--radius-lg) overflow-hidden aspect-video">
-        <img src="https://picsum.photos/seed/proizvodstvo-ceh/1280/720" alt="Как делают мебель на фабрике-партнёре" class="w-full h-full object-cover" onerror="CM.imgError(this)">
-        <div class="absolute inset-0 bg-navy/30"></div>
-        <button type="button" class="play-btn" data-open-modal="video" aria-label="Посмотреть видео о том, как делают мебель">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-        </button>
-        <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4 text-cream">
-          <div>
-            <p class="font-display text-lg md:text-2xl font-semibold">Как делают вашу мебель: 2 минуты</p>
-            <p class="text-sm text-cream/70">Выбор фабрики → производство → контроль → доставка</p>
+    <div class="container-main py-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,360px)] items-start">
+
+      <div class="flex flex-col gap-6">
+        <!-- ===== Возврат 7 дней ===== -->
+        <section class="card p-6 md:p-8 flex flex-col gap-4">
+          <h2 class="section-title text-2xl">Возврат в течение 7 дней</h2>
+          <p class="text-greige leading-relaxed">При дистанционной покупке по Закону о защите прав потребителей вы вправе отказаться от мебели в течение <b>7 дней с момента получения</b> — без объяснения причин.</p>
+          <div class="grid gap-3 sm:grid-cols-2">
+            <div class="rounded-(--radius-md) bg-olive-50 p-4 text-sm leading-relaxed">
+              <b class="text-olive">✓ Вернуть можно</b>
+              <p class="mt-1 text-greige">Если товар не был в эксплуатации, сохранены товарный вид, комплектация и упаковка.</p>
+            </div>
+            <div class="rounded-(--radius-md) bg-sand p-4 text-sm leading-relaxed">
+              <b>Условия возврата</b>
+              <p class="mt-1 text-greige">Возврат денег — после получения товара, в сроки, установленные законом <span class="req-inline">[ПРОВЕРКА ЮРИСТОМ]</span>. Способ — как вы оплачивали: карта, СБП или наличные.</p>
+            </div>
           </div>
-          <span class="chip bg-white/15 text-cream hidden md:inline-flex">видео 2:10</span>
-        </div>
-      </div>
-    </section>
+          <div class="rounded-(--radius-md) bg-sand p-4 text-sm text-greige leading-relaxed">
+            <b class="text-ink">Вывоз мебели:</b> организуем сами — стоимость зависит от региона, назовём по телефону <span class="req-inline">[ТРУБ]</span>. Для Владимира и области условия уточним при подтверждении <span class="req-inline">[ТРУБ]</span>.
+          </div>
+        </section>
 
-    <!-- ===== Цифры ===== -->
-    <section class="container-main py-6">
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="card p-5 flex flex-col gap-1">
-          <span class="stat-num">★ 5</span>
-          <span class="text-sm text-greige">рейтинг на Яндекс Картах · 27 отзывов</span>
-        </div>
-        <div class="card p-5 flex flex-col gap-1">
-          <span class="stat-num">1 год</span>
-          <span class="text-sm text-greige">гарантия на мебель и фурнитуру</span>
-        </div>
-        <div class="card p-5 flex flex-col gap-1">
-          <span class="stat-num">10–20 дней</span>
-          <span class="text-sm text-greige">срок мягкой мебели</span>
-        </div>
-        <div class="card p-5 flex flex-col gap-1">
-          <span class="stat-num">2–3 фото</span>
-          <span class="text-sm text-greige">фотоотчёт по каждому этапу заказа</span>
-        </div>
-      </div>
-    </section>
+        <!-- ===== Отмена заказа ===== -->
+        <section class="card p-6 md:p-8 flex flex-col gap-4">
+          <h2 class="section-title text-2xl">Отмена заказа</h2>
+          <div class="flex flex-col gap-3 text-sm">
+            <div class="flex gap-3"><span class="text-olive font-bold shrink-0">✓</span><span><b>До начала производства — бесплатно.</b> Предоплата возвращается полностью. Успейте отменить до запуска — статус заказа подскажет менеджер.</span></div>
+            <div class="flex gap-3"><span class="text-terracotta font-bold shrink-0">✕</span><span><b>После старта производства</b> — по условиям договора: удерживается стоимость уже выполненных работ (раскрой, материалы, работа фабрики).</span></div>
+            <div class="flex gap-3"><span class="text-terracotta font-bold shrink-0">✕</span><span><b>Индивидуальный заказ по вашим размерам</b> — возврат надлежащего качества по закону не предусмотрен. Качество и гарантию при этом мы обеспечиваем как обычно <span class="req-inline">[ПРОВЕРКА ЮРИСТОМ]</span>.</span></div>
+          </div>
+          <p class="text-sm text-greige">Как отменить: позвоните <a href="tel:+79206225195" class="underline">+7 (920) 622-51-95</a> или напишите в WhatsApp, назовите номер заказа — зафиксируем отмену письменно.</p>
+        </section>
 
-    <!-- ===== Как мы выбираем фабрики ===== -->
-    <section class="container-main py-8 grid gap-8 lg:grid-cols-2 items-center">
-      <div class="flex flex-col gap-4">
-        <h2 class="section-title text-2xl md:text-3xl">Как мы выбираем фабрики</h2>
-        <p class="text-greige leading-relaxed">Мы — агент между вами и производством. У нас нет собственного цеха, поэтому мы честно выбираем фабрику под каждую задачу: мягкую мебель и корпусную делают разные партнёры. Показываем фото с этапов: раскрой, наполнение, сборка, упаковка.</p>
-        <ul class="flex flex-col gap-2">
-          <li class="flex gap-2"><span class="text-olive font-bold">✓</span> Каркас мягкой мебели — берёза и фанера 18 мм, усиленные царги</li>
-          <li class="flex gap-2"><span class="text-olive font-bold">✓</span> Пружинный блок независимых пружин или ППУ 35 кг/м³</li>
-          <li class="flex gap-2"><span class="text-olive font-bold">✓</span> Ткани — велюр, рогожка, микрофибра: 300+ вариантов</li>
-          <li class="flex gap-2"><span class="text-olive font-bold">✓</span> Срок 10–20 дней + фотоотчёт по каждому этапу</li>
-        </ul>
-        <a href="catalog.html?cat=soft" class="btn btn-primary self-start">Смотреть мягкую мебель</a>
+        <!-- ===== Порядок действий ===== -->
+        <section class="card p-6 md:p-8 flex flex-col gap-4">
+          <h2 class="section-title text-2xl">Как оформить возврат</h2>
+          <ol class="flex flex-col gap-3 text-sm">
+            <li class="flex gap-3"><span class="font-display font-semibold text-terracotta shrink-0">1</span><span>Позвоните или напишите в WhatsApp — назовите номер заказа и причину.</span></li>
+            <li class="flex gap-3"><span class="font-display font-semibold text-terracotta shrink-0">2</span><span>Подготовьте товар: упаковка, комплектация, паспорт и чек (договор), если есть.</span></li>
+            <li class="flex gap-3"><span class="font-display font-semibold text-terracotta shrink-0">3</span><span>Мы организуем вывоз — стоимость назовём по телефону <span class="req-inline">[ТРУБ]</span>.</span></li>
+            <li class="flex gap-3"><span class="font-display font-semibold text-terracotta shrink-0">4</span><span>После получения товара вернём деньги тем же способом, в сроки по закону <span class="req-inline">[ПРОВЕРКА ЮРИСТОМ]</span>.</span></li>
+          </ol>
+          <p class="text-sm text-greige">Совет: чтобы не ошибиться с размерами, воспользуйтесь бесплатным просчётом — <a href="raschet.html" class="underline">пришлём решение под вашу нишу</a>.</p>
+        </section>
       </div>
-      <img src="https://picsum.photos/seed/proizvodstvo-karkas/720/560" alt="Каркас дивана на фабрике-партнёре" loading="lazy" class="rounded-(--radius-lg) w-full aspect-[4/3] object-cover" onerror="CM.imgError(this)">
-    </section>
 
-    <!-- ===== Три проверки ===== -->
-    <section class="container-main py-8 grid gap-8 lg:grid-cols-2 items-center">
-      <img src="https://picsum.photos/seed/fabrika-korpus/720/560" alt="Корпусная мебель на фабрике-партнёре" loading="lazy" class="rounded-(--radius-lg) w-full aspect-[4/3] object-cover lg:order-2" onerror="CM.imgError(this)">
-      <div class="flex flex-col gap-4 lg:order-1">
-        <h2 class="section-title text-2xl md:text-3xl">Три проверки перед тем, как предложить фабрику</h2>
-        <p class="text-greige leading-relaxed">Шкафы, гостиные, прихожие и кухни делают фабрики, с которыми мы работаем не первый год. Отбираем их по трём критериям и держим руку на пульсе каждого заказа.</p>
-        <ul class="flex flex-col gap-2">
-          <li class="flex gap-2"><span class="text-olive font-bold">✓</span> Качество кромки и фурнитуры: ЛДСП Egger, Kronospan — 16–18 мм, кромка 1–2 мм по периметру</li>
-          <li class="flex gap-2"><span class="text-olive font-bold">✓</span> Честные сроки: 20–45 дней с учётом визуализации, статусы по СМС</li>
-          <li class="flex gap-2"><span class="text-olive font-bold">✓</span> Соблюдение обещаний: фурнитура с доводчиками — Blum, GTV, Boyard</li>
-        </ul>
-        <p class="text-sm text-greige">Можете заказать на фабрике напрямую? Да, но тогда без нашей гарантии и контроля сроков. Мы отвечаем за каждый заказ — поэтому и работаем через партнёров.</p>
-        <a href="catalog.html?cat=corpus" class="btn btn-outline self-start">Смотреть корпусную мебель</a>
-      </div>
-    </section>
-
-    <!-- ===== Этапы ===== -->
-    <section class="container-main py-8">
-      <h2 class="section-title text-2xl md:text-3xl">Как проходит заказ</h2>
-      <div class="mt-6 grid gap-4 md:grid-cols-3">
-        <div class="card p-5 flex flex-col gap-2">
-          <span class="font-display text-lg font-semibold text-terracotta">1</span>
-          <h3 class="font-semibold">Заявка и договор</h3>
-          <p class="text-greige text-sm">Оформляем заказ, закрепляем цену «всё включено» и срок в договоре. Предоплата — от 30%.</p>
+      <!-- ===== САЙДБАР ===== -->
+      <aside class="flex flex-col gap-4">
+        <div class="bg-navy text-cream rounded-(--radius-lg) p-6 flex flex-col gap-3">
+          <h2 class="font-display text-lg font-semibold text-cream">Хотите вернуть или отменить?</h2>
+          <p class="text-sm text-cream/70">Позвоните — решим быстро и по-человечески.</p>
+          <a href="tel:+79206225195" class="btn btn-olive btn-full">+7 (920) 622-51-95</a>
+          <a href="https://wa.me/79206225195" target="_blank" rel="noopener" class="btn btn-ghost text-cream btn-full">Написать в WhatsApp</a>
         </div>
-        <div class="card p-5 flex flex-col gap-2">
-          <span class="font-display text-lg font-semibold text-terracotta">2</span>
-          <h3 class="font-semibold">Производство и фотоотчёт</h3>
-          <p class="text-greige text-sm">Передаём заказ фабрике-партнёру и следим за статусами. Присылаем фото: раскрой, сборка, упаковка. Обычно 2–3 фото за процесс.</p>
+        <div class="card p-6 flex flex-col gap-3">
+          <h2 class="font-display text-lg font-semibold">Важно знать</h2>
+          <p class="text-sm text-greige leading-relaxed">Ремонт по гарантии — не повод для возврата: если дефект производственный, мы <a href="garantiya.html" class="underline">устраним его бесплатно</a> в течение 1 года.</p>
+          <a href="garantiya.html" class="text-terracotta text-sm hover:underline">Условия гарантии →</a>
         </div>
-        <div class="card p-5 flex flex-col gap-2">
-          <span class="font-display text-lg font-semibold text-terracotta">3</span>
-          <h3 class="font-semibold">Доставка и сборка</h3>
-          <p class="text-greige text-sm">Привозим, поднимаем, собираем и убираем упаковку. Вы осматриваете и оплачиваете остаток — удобным способом.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Фото с фабрики ===== -->
-    <section class="container-main py-8">
-      <div class="flex items-center justify-between gap-4">
-        <h2 class="section-title text-2xl md:text-3xl">Фото с фабрики</h2>
-        <a href="https://vk.com/creatmebel_ru" target="_blank" rel="noopener" class="btn btn-ghost text-sm shrink-0">Больше в VK →</a>
-      </div>
-      <div class="h-scroll mt-6 flex gap-4 overflow-x-auto pb-2 snap-x">
-        <figure class="min-w-[240px] md:min-w-[300px] flex flex-col gap-2 snap-start">
-          <img src="https://picsum.photos/seed/proizvodstvo-1/400/300" alt="Раскрой ткани" loading="lazy" class="rounded-(--radius-md) aspect-[4/3] object-cover w-full" onerror="CM.imgError(this)">
-          <figcaption class="text-sm text-greige">Раскрой ткани</figcaption>
-        </figure>
-        <figure class="min-w-[240px] md:min-w-[300px] flex flex-col gap-2 snap-start">
-          <img src="https://picsum.photos/seed/proizvodstvo-2/400/300" alt="Набивка дивана" loading="lazy" class="rounded-(--radius-md) aspect-[4/3] object-cover w-full" onerror="CM.imgError(this)">
-          <figcaption class="text-sm text-greige">Набивка и поролон</figcaption>
-        </figure>
-        <figure class="min-w-[240px] md:min-w-[300px] flex flex-col gap-2 snap-start">
-          <img src="https://picsum.photos/seed/proizvodstvo-3/400/300" alt="Сборка каркаса" loading="lazy" class="rounded-(--radius-md) aspect-[4/3] object-cover w-full" onerror="CM.imgError(this)">
-          <figcaption class="text-sm text-greige">Сборка каркаса</figcaption>
-        </figure>
-        <figure class="min-w-[240px] md:min-w-[300px] flex flex-col gap-2 snap-start">
-          <img src="https://picsum.photos/seed/proizvodstvo-4/400/300" alt="Упаковка готового дивана" loading="lazy" class="rounded-(--radius-md) aspect-[4/3] object-cover w-full" onerror="CM.imgError(this)">
-          <figcaption class="text-sm text-greige">Упаковка перед доставкой</figcaption>
-        </figure>
-        <figure class="min-w-[240px] md:min-w-[300px] flex flex-col gap-2 snap-start">
-          <img src="https://picsum.photos/seed/proizvodstvo-5/400/300" alt="Готовый диван" loading="lazy" class="rounded-(--radius-md) aspect-[4/3] object-cover w-full" onerror="CM.imgError(this)">
-          <figcaption class="text-sm text-greige">Готовое изделие</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- ===== Гарантия + CTA ===== -->
-    <section class="container-main py-8">
-      <div class="rounded-(--radius-lg) bg-navy text-cream p-6 md:p-10 grid gap-6 md:grid-cols-[1fr_auto] items-center">
-        <div class="flex flex-col gap-3">
-          <h2 class="section-title text-2xl md:text-3xl text-cream">Подберём фабрику под вашу задачу</h2>
-          <p class="text-cream/70 max-w-2xl">Позвоните или оставьте заявку — обсудим ткань, размеры и сроки. Пришлём фото используемых материалов и образцы ткани по почте. Гарантия на мебель — 1 год.</p>
-        </div>
-        <div class="flex flex-col gap-2 md:min-w-[220px]">
-          <button type="button" class="btn btn-olive btn-lg btn-full" data-open-modal="size" data-src="production">Получить просчёт</button>
-          <a href="tel:+79206225195" class="btn btn-ghost text-cream btn-lg btn-full">+7 (920) 622-51-95</a>
-        </div>
-      </div>
-    </section>
+      </aside>
+    </div>
   </main>
 
   <!-- ===== ФУТЕР ===== -->
@@ -313,19 +236,6 @@
     </a>
   </nav>
 
-  <!-- ===== Модалка видео (заглушка) ===== -->
-  <div id="modal-video" class="modal modal-hidden" role="dialog" aria-modal="true" aria-label="Видео о производстве">
-    <div class="modal-backdrop"></div>
-    <div class="modal-panel !bg-navy !text-cream aspect-video max-w-4xl w-full">
-      <button class="modal-close text-cream" data-close aria-label="Закрыть">×</button>
-      <div class="flex flex-col items-center justify-center gap-4 h-full text-center px-6">
-        <span class="stat-num text-terracotta">Заглушка</span>
-        <p class="max-w-md text-cream/80">Здесь будет видео «Как делают вашу мебель» — 2:10. В проде подставим реальный ролик (YouTube / VK Видео).</p>
-        <a href="https://vk.com/creatmebel_ru" target="_blank" rel="noopener" class="btn btn-olive">Смотреть больше видео в VK</a>
-      </div>
-    </div>
-  </div>
-
   <!-- ===== Модалка «Мебель по вашим размерам» ===== -->
   <div id="modal-size" class="modal modal-hidden" role="dialog" aria-modal="true" aria-labelledby="size-title">
     <div class="modal-backdrop"></div>
@@ -382,7 +292,7 @@
       <div id="size-success" class="confirm-box hidden">
         <span class="confirm-icon" aria-hidden="true">✓</span>
         <h3 class="font-display text-lg font-semibold">Заявка отправлена</h3>
-        <p>Перезвоним за 15 минут (9:00–20:00). Номер обращения №<span class="font-bold">4 226</span></p>
+        <p>Перезвоним за 15 минут (9:00–20:00). Номер обращения №<span class="font-bold">4 233</span></p>
         <a href="https://wa.me/79206225195" target="_blank" rel="noopener" class="btn btn-olive">Дублировать в WhatsApp</a>
       </div>
     </div>

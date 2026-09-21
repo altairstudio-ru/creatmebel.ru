@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Корзина — Креат Мебель</title>
-  <meta name="description" content="Ваш заказ. Доставка по Москве включена от 15 000 ₽, подъём на лифте и сборка мягкой мебели — бесплатно. Рассрочка 0%.">
+  <meta name="description" content="Ваш заказ: товар + доставка по тарифу (МКАД — 2 000 ₽, за МКАД — 45 ₽/км), подъём и сборка — по телефону. Оплата: карта онлайн, СБП или при получении.">
   <meta name="theme-color" content="#F8F5F0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,8 +17,8 @@
   <header class="site-header">
     <div class="container-main header-inner">
       <a class="brand" href="index.html" aria-label="Креат Мебель — на главную">
-        <span class="brand-name">КРЕАТ<em>.</em></span>
-        <span class="brand-sub">мебель от производителя</span>
+        <span class="brand-name">КРЕАТ <em>МЕБЕЛЬ</em></span>
+        <span class="brand-sub">проверенные фабрики-партнёры</span>
       </a>
       <nav class="main-nav" aria-label="Основная навигация">
         <a href="catalog.html" class="nav-link" id="nav-catalog" aria-haspopup="true">
@@ -30,6 +30,10 @@
         <a href="contacts.html" class="nav-link">Контакты</a>
       </nav>
       <div class="header-actions flex items-center gap-1 ms-auto">
+        <select class="region-select hidden lg:inline-flex" aria-label="Регион доставки">
+          <option value="moscow">Москва и МО</option>
+          <option value="vladimir">Владимир и обл.</option>
+        </select>
         <button type="button" class="scheme-toggle" id="scheme-toggle" aria-label="Переключить цветовую схему" title="Переключить стиль сайта">
           <span class="scheme-toggle-label" id="scheme-label">Минимализм</span>
           <span class="scheme-toggle-indicator"></span>
@@ -69,7 +73,11 @@
   <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
     <div class="mobile-menu-panel">
       <button class="modal-close" id="mobile-menu-close" aria-label="Закрыть меню">×</button>
-      <a href="index.html" class="brand mb-4"><span class="brand-name">КРЕАТ<em>.</em></span><span class="brand-sub">мебель от производителя</span></a>
+      <a href="index.html" class="brand mb-4"><span class="brand-name">КРЕАТ <em>МЕБЕЛЬ</em></span><span class="brand-sub">проверенные фабрики-партнёры</span></a>
+      <select class="region-select mb-3 w-full" aria-label="Регион доставки">
+        <option value="moscow">Москва и МО</option>
+        <option value="vladimir">Владимир и обл.</option>
+      </select>
       <a href="catalog.html" class="mobile-menu-link">Каталог</a>
       <a href="production.html" class="mobile-menu-link">Производство</a>
       <a href="delivery.html" class="mobile-menu-link">Доставка и оплата</a>
@@ -129,24 +137,15 @@
         <dl class="flex flex-col gap-2 text-sm">
           <div class="flex justify-between gap-3"><dt class="text-greige">Товары</dt><dd id="cart-subtotal" class="font-semibold">0 ₽</dd></div>
           <div id="cart-promo-row" class="hidden flex justify-between gap-3"><dt class="text-greige">Промокод</dt><dd id="cart-promo-value" class="font-semibold text-olive">−0 ₽</dd></div>
-          <div class="flex justify-between gap-3"><dt class="text-greige">Доставка по Москве</dt><dd id="cart-delivery" class="font-semibold">0 ₽</dd></div>
+          <div class="flex justify-between gap-3"><dt class="text-greige">Доставка</dt><dd id="cart-delivery" class="font-semibold">0 ₽</dd></div>
+          <div id="cart-lift-line" class="flex justify-between gap-3"><dt class="text-greige">Подъём</dt><dd class="font-semibold">по телефону <span class="req-inline">[ТРУБ]</span></dd></div>
+          <div class="flex justify-between gap-3"><dt class="text-greige">Сборка</dt><dd class="font-semibold">по телефону <span class="req-inline">[ТРУБ]</span></dd></div>
           <div class="flex justify-between gap-3 border-t border-line pt-3 text-lg">
             <dt class="font-display font-semibold">Итого</dt>
             <dd id="cart-total" class="font-display font-bold">0 ₽</dd>
           </div>
         </dl>
-        <p class="text-xs text-greige">Цена всё включено: товар, доставка по Москве, подъём и сборка. Уточните детали — перезвоним за 15 минут.</p>
-        <label class="text-sm text-greige" for="cart-months">Рассрочка на</label>
-        <select id="cart-months" class="field" aria-label="Срок рассрочки">
-          <option value="6">6 месяцев</option>
-          <option value="12" selected>12 месяцев</option>
-          <option value="18">18 месяцев</option>
-          <option value="24">24 месяца</option>
-        </select>
-        <div class="rounded-(--radius-md) bg-olive-50 p-4 flex flex-col gap-1">
-          <span id="cart-monthly" class="font-display text-xl font-bold">0 ₽/мес</span>
-          <span id="cart-monthly-note" class="text-xs text-greige">при рассрочке на 12 мес. · 0-0 — без первого взноса и переплат</span>
-        </div>
+        <p class="text-xs text-greige">Цена всё включено: товар + доставка по тарифу (<span data-region-msk>МКАД — 2 000 ₽, за МКАД — 45 ₽/км</span><span data-region-pending class="hidden">Владимир — рассчитаем при подтверждении</span>). Подъём и сборку назовём по телефону до оплаты.</p>
         <button id="cart-checkout" type="button" class="btn btn-primary btn-lg btn-full">Оформить заказ</button>
         <a href="tel:+79206225195" class="btn btn-ghost btn-full">Позвонить — оформят по телефону</a>
       </aside>
@@ -157,8 +156,8 @@
   <footer class="site-footer bg-sand">
     <div class="container-main py-12 grid gap-8 md:grid-cols-[1.2fr_1fr_1fr_1.2fr]">
       <div class="flex flex-col gap-3">
-        <a href="index.html" class="brand"><span class="brand-name">КРЕАТ<em>.</em></span><span class="brand-sub">мебель от производителя</span></a>
-        <p class="text-sm text-greige leading-relaxed max-w-xs">Мягкая и корпусная мебель в Москве: своё производство и проверенные фабрики. Цена — всё включено.</p>
+        <a href="index.html" class="brand"><span class="brand-name">КРЕАТ <em>МЕБЕЛЬ</em></span><span class="brand-sub">проверенные фабрики-партнёры</span></a>
+        <p class="text-sm text-greige leading-relaxed max-w-xs">Мягкая и корпусная мебель в Москве и Владимире: проверенные фабрики-партнёры. Цена — всё включено.</p>
       </div>
       <nav class="flex flex-col gap-2" aria-label="Каталог в подвале">
         <h3 class="text-xs font-bold uppercase tracking-widest text-greige mb-1">Каталог</h3>
@@ -170,14 +169,17 @@
         <h3 class="text-xs font-bold uppercase tracking-widest text-greige mb-1">Покупателям</h3>
         <a href="delivery.html" class="footer-link">Доставка и оплата</a>
         <a href="production.html" class="footer-link">Производство</a>
-        <a href="delivery.html#garantiya" class="footer-link">Гарантия</a>
-        <button type="button" class="footer-link text-left" data-open-modal="size">Просчёт по размерам</button>
+        <a href="garantiya.html" class="footer-link">Гарантия</a>
+        <a href="vozvrat.html" class="footer-link">Возврат</a>
+        <a href="faq.html" class="footer-link">Вопросы и ответы</a>
+        <a href="raschet.html" class="footer-link">Просчёт по размерам</a>
+        <button type="button" class="footer-link text-left" data-open-modal="size">Быстрый просчёт</button>
       </nav>
       <div class="flex flex-col gap-2">
         <h3 class="text-xs font-bold uppercase tracking-widest text-greige mb-1">Контакты</h3>
         <a href="tel:+79206225195" class="font-bold text-lg hover:text-terracotta">+7 (920) 622-51-95</a>
         <a href="mailto:info@creatmebel.ru" class="footer-link">info@creatmebel.ru</a>
-        <span class="text-sm text-greige">Москва · 9:00–20:00 без выходных</span>
+        <span class="text-sm text-greige"><span data-region-label>Москва и МО</span> · Владимир и область · 9:00–20:00 без выходных</span>
         <div class="flex gap-2 mt-1">
           <a href="https://wa.me/79206225195" target="_blank" rel="noopener" class="icon-btn !w-11 !h-11 bg-white" aria-label="WhatsApp">💬</a>
           <a href="https://vk.com/creatmebel_ru" target="_blank" rel="noopener" class="icon-btn !w-11 !h-11 bg-white" aria-label="ВКонтакте">VK</a>
@@ -188,7 +190,7 @@
     <div class="border-t border-line/70">
       <div class="container-main py-5 flex flex-col md:flex-row gap-2 justify-between text-sm text-greige">
         <span>© 2015–2025 Креат Мебель</span>
-        <a href="#" class="hover:text-terracotta">Политика конфиденциальности</a>
+        <a href="polityka.html" class="hover:text-terracotta">Политика конфиденциальности</a>
       </div>
     </div>
   </footer>

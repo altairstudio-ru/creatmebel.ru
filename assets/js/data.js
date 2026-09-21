@@ -4,7 +4,7 @@
    ============================================================ */
 window.CM = window.CM || {};
 
-/* Общие контакты и факты */
+/* Общие контакты и факты M1 */
 window.CM.CONTACTS = {
   phoneDisplay: '+7 (920) 622-51-95',
   phoneHref: 'tel:+79206225195',
@@ -13,21 +13,58 @@ window.CM.CONTACTS = {
   email: 'info@creatmebel.ru',
   vk: 'https://vk.com/creatmebel_ru',
   ok: 'https://ok.ru/creatmebel',
-  city: 'Москва',
   schedule: '9:00–20:00, без выходных'
 };
 
-/* Тарифы (прототипные, ⚠️ уточняются у заказчика) */
+/* Тарифы Москвы/МО (подтверждены клиентом 21.09.2026).
+   Подъём и сборка — «тариф по телефону» [ТРЕБУЕТСЯ ОТ КЛИЕНТА]: числа не публикуем. */
 window.CM.RATES = {
-  deliveryMkadIncludedFrom: 15000,
-  deliveryMkadFlat: 1500,
-  deliveryBeyondMkadPerKm: 40,
+  deliveryMkadIncludedFrom: 0,
+  deliveryMkadFlat: 2000,
+  deliveryBeyondMkadPerKm: 45,
   deliveryBeyondAnomalyKm: 50,
-  liftPerFloor: 350,
-  assemblyCorpusMin: 500,
-  assemblyCorpusMax: 1500,
-  assemblyCorpusDemo: 1000
+  liftPerFloor: null,
+  assemblyCorpusMin: null,
+  assemblyCorpusMax: null,
+  assemblyCorpusDemo: null,
+  sbpDiscount: 0.02
 };
+
+/* Регионы M1: Москва и МО (дефолт) + Владимир и область.
+   Владимирские тарифы — заглушки [ТРЕБУЕТСЯ ОТ КЛИЕНТА]. */
+window.CM.REGIONS = {
+  moscow: {
+    id: 'moscow',
+    label: 'Москва и МО',
+    shortLabel: 'Москва',
+    geoNames: { inCity: 'по Москве', city: 'Москва', cityPrep: 'в Москве', geo: 'Москвы' },
+    deliveryIncludedNote: 'В пределах МКАД — 2 000 ₽, за МКАД — 45 ₽/км',
+    deliveryPendingNote: '',
+    rates: { deliveryMkadIncludedFrom: 0, deliveryMkadFlat: 2000, deliveryBeyondMkadPerKm: 45, liftPerFloor: null, assemblyCorpusMin: null, assemblyCorpusMax: null }
+  },
+  vladimir: {
+    id: 'vladimir',
+    label: 'Владимир и область',
+    shortLabel: 'Владимир',
+    geoNames: { inCity: 'по Владимиру и области', city: 'Владимир', cityPrep: 'во Владимире', geo: 'Владимира' },
+    deliveryIncludedNote: 'рассчитаем при подтверждении заказа [ТРЕБУЕТСЯ ОТ КЛИЕНТА]',
+    deliveryPendingNote: 'Стоимость и сроки доставки для Владимира рассчитаем при подтверждении заказа — менеджер назовёт точную сумму до оплаты.',
+    rates: null
+  }
+};
+
+window.CM.REGION_KEY = 'cm_region_v3';
+window.CM.getRegion = function () {
+  var id = 'moscow';
+  try { id = localStorage.getItem(window.CM.REGION_KEY) || 'moscow'; } catch (e) {}
+  return window.CM.REGIONS[id] ? id : 'moscow';
+};
+window.CM.setRegion = function (id) {
+  id = window.CM.REGIONS[id] ? id : 'moscow';
+  try { localStorage.setItem(window.CM.REGION_KEY, id); } catch (e) {}
+  return id;
+};
+window.CM.region = function () { return window.CM.REGIONS[window.CM.getRegion()]; };
 
 /* Промокоды */
 window.CM.PROMOCODES = { KB20: { discount: 0.05, label: '−5% по промокоду KB20' } };
@@ -46,7 +83,7 @@ window.PRODUCTS = [
       "Пружинный блок независимых пружин",
       "Механизм еврокнижка",
       "Съемный чехол",
-      "Гарантия 18 месяцев"
+      "Гарантия 1 год"
     ],
     "sizes": {
       "Ширина": "200 см", "Глубина": "90 см", "Высота": "85 см",
@@ -57,7 +94,6 @@ window.PRODUCTS = [
     },
     "colorOptions": ["Серый", "Бежевый", "Оливковый"],
     "inStock": true, "productionDays": 5, "deliveryIncluded": true, "assemblyIncluded": true,
-    "installmentFrom": 3900,
     "image": "https://creatmebel.ru/assets/images/products/3037/oskar--1.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/3037/oskar--1.jpg",
@@ -79,7 +115,7 @@ window.PRODUCTS = [
       "Механизм аккордеон",
       "ППУ повышенной плотности",
       "Чехол на липучках",
-      "Гарантия 18 месяцев"
+      "Гарантия 1 год"
     ],
     "sizes": {
       "Ширина": "160 см", "Глубина": "85 см", "Высота": "80 см",
@@ -90,7 +126,6 @@ window.PRODUCTS = [
     },
     "colorOptions": ["Серый", "Синий", "Бежевый"],
     "inStock": true, "productionDays": 1, "deliveryIncluded": true, "assemblyIncluded": true,
-    "installmentFrom": 2000,
     "image": "https://creatmebel.ru/assets/images/products/3089/spejs-2.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/3089/spejs-2.jpg",
@@ -124,7 +159,6 @@ window.PRODUCTS = [
     },
     "colorOptions": ["Песочный", "Графит", "Изумруд"],
     "inStock": true, "productionDays": 7, "deliveryIncluded": true, "assemblyIncluded": true,
-    "installmentFrom": 3800,
     "image": "https://creatmebel.ru/assets/images/products/3968/richards-neo-azure-zerkalnyj-00.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/3968/richards-neo-azure-zerkalnyj-00.jpg",
@@ -158,7 +192,6 @@ window.PRODUCTS = [
     },
     "colorOptions": ["Бежевый", "Коричневый", "Серо-голубой"],
     "inStock": false, "productionDays": 14, "deliveryIncluded": true, "assemblyIncluded": true,
-    "installmentFrom": 3800,
     "image": "https://creatmebel.ru/assets/images/products/3021/lofter.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/3021/lofter.jpg",
@@ -192,7 +225,6 @@ window.PRODUCTS = [
     },
     "colorOptions": ["Розовый", "Сиреневый", "Голубой"],
     "inStock": true, "productionDays": 3, "deliveryIncluded": true, "assemblyIncluded": true,
-    "installmentFrom": 1600,
     "image": "https://creatmebel.ru/assets/images/products/2956/detskij-divan-yulechka-100-4-myagkij-podlokotnik.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/2956/detskij-divan-yulechka-100-4-myagkij-podlokotnik.jpg",
@@ -214,7 +246,7 @@ window.PRODUCTS = [
       "Подлокотники из массива березы",
       "ППУ высокой плотности",
       "Съемный чехол",
-      "Гарантия 18 месяцев"
+      "Гарантия 1 год"
     ],
     "sizes": {
       "Ширина": "75 см", "Глубина": "82 см", "Высота": "88 см", "Высота сиденья": "45 см"
@@ -224,7 +256,6 @@ window.PRODUCTS = [
     },
     "colorOptions": ["Серый", "Бежевый", "Терракотовый"],
     "inStock": true, "productionDays": 1, "deliveryIncluded": true, "assemblyIncluded": true,
-    "installmentFrom": 1300,
     "image": "https://creatmebel.ru/assets/images/products/2994/grej-.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/2994/grej-.jpg",
@@ -245,7 +276,7 @@ window.PRODUCTS = [
       "Раздвижная система с доводчиками",
       "3 секции: полки, штанга, ящики",
       "Зеркало на фасаде",
-      "Фурнитура с гарантией 18 месяцев"
+      "Фурнитура с гарантией 1 год"
     ],
     "sizes": { "Ширина": "240 см", "Глубина": "60 см", "Высота": "240 см" },
     "materials": {
@@ -254,7 +285,6 @@ window.PRODUCTS = [
     },
     "colorOptions": ["Дуб сонома", "Венге", "Белый"],
     "inStock": false, "productionDays": 14, "deliveryIncluded": true, "assemblyIncluded": true,
-    "installmentFrom": 4800,
     "image": "https://creatmebel.ru/assets/images/products/2003/shkaf-kupe-premium-1.1jpg.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/2003/shkaf-kupe-premium-1.1jpg.jpg",
@@ -283,7 +313,6 @@ window.PRODUCTS = [
     },
     "colorOptions": ["Графит + белый", "Дуб сонома", "Дуб каньон"],
     "inStock": false, "productionDays": 21, "deliveryIncluded": true, "assemblyIncluded": true,
-    "installmentFrom": 3900,
     "image": "https://creatmebel.ru/assets/images/products/2872/shkaf-kupe-trend-13-2-x-dvernyj.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/2872/shkaf-kupe-trend-13-2-x-dvernyj.jpg",
@@ -314,7 +343,6 @@ window.PRODUCTS = [
     },
     "colorOptions": ["Дуб сонома", "Белый", "Венге"],
     "inStock": true, "productionDays": 5, "deliveryIncluded": true, "assemblyIncluded": true,
-    "installmentFrom": 2500,
     "image": "https://creatmebel.ru/assets/images/products/3177/strit-3sl.jpeg",
     "images": [
       "https://creatmebel.ru/assets/images/products/3177/strit-3sl.jpeg"
@@ -342,7 +370,6 @@ window.PRODUCTS = [
     },
     "colorOptions": ["Дуб сонома", "Венге", "Серый графит"],
     "inStock": true, "productionDays": 3, "deliveryIncluded": false, "assemblyIncluded": false,
-    "installmentFrom": 1200,
     "image": "https://creatmebel.ru/assets/images/products/1753/tumba-tv-1-1.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/1753/tumba-tv-1-1.jpg",
@@ -371,7 +398,6 @@ window.PRODUCTS = [
     },
     "colorOptions": ["Дуб сонома", "Венге", "Белый"],
     "inStock": true, "productionDays": 7, "deliveryIncluded": true, "assemblyIncluded": true,
-    "installmentFrom": 2600,
     "image": "https://creatmebel.ru/assets/images/products/4395/prixozhaya-malevich-5-2.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/4395/prixozhaya-malevich-5-2.jpg",
@@ -403,7 +429,6 @@ window.PRODUCTS = [
     },
     "colorOptions": ["Серая обивка", "Бежевая обивка", "Темно-синяя обивка"],
     "inStock": true, "productionDays": 5, "deliveryIncluded": true, "assemblyIncluded": true,
-    "installmentFrom": 2600,
     "image": "https://creatmebel.ru/assets/images/products/3981/trento-13.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/3981/trento-13.jpg",
@@ -437,7 +462,6 @@ window.PRODUCTS = [
     },
     "colorOptions": ["Белая обивка", "Серый графит", "Капучино"],
     "inStock": true, "productionDays": 3, "deliveryIncluded": true, "assemblyIncluded": true,
-    "installmentFrom": 2400,
     "image": "https://creatmebel.ru/assets/images/products/4382/krovat-focus-yasen-shimo-svetlyj.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/4382/krovat-focus-yasen-shimo-svetlyj.jpg",
@@ -470,7 +494,6 @@ window.PRODUCTS = [
     },
     "colorOptions": ["Дуб сонома + черный", "Белый + бежевый", "Графит"],
     "inStock": false, "productionDays": 14, "deliveryIncluded": true, "assemblyIncluded": false,
-    "installmentFrom": 3200,
     "image": "https://creatmebel.ru/assets/images/products/1251/obedennaya-gruppa.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/1251/obedennaya-gruppa.jpg"
@@ -498,7 +521,6 @@ window.PRODUCTS = [
     },
     "colorOptions": ["Белый", "Белый + розовый", "Белый + голубой"],
     "inStock": true, "productionDays": 1, "deliveryIncluded": false, "assemblyIncluded": false,
-    "installmentFrom": 1000,
     "image": "https://creatmebel.ru/assets/images/products/1923/detskij-komod-arka.jpg",
     "images": [
       "https://creatmebel.ru/assets/images/products/1923/detskij-komod-arka.jpg",

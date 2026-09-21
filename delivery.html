@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Доставка, подъём, сборка и оплата — Креат Мебель</title>
-  <meta name="description" content="Доставка по Москве — включена (от 15 000 ₽). Подъём на лифте и сборка мягкой мебели — бесплатно. Рассрочка 0%, оплата картой, наличными и по счёту.">
+  <meta name="description" content="Доставка: Москва и МО — 2 000 ₽ в пределах МКАД, 45 ₽/км за МКАД; Владимир — рассчитаем при подтверждении. Подъём и сборка — по телефону. Оплата картой онлайн, СБП (−2%) или при получении.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Доставка и оплата — Креат Мебель">
-  <meta property="og:description" content="Цена всё включено: доставка, подъём и сборка.">
+  <meta property="og:description" content="Цена всё включено: товар + доставка по тарифу + подъём и сборка по телефону. Гарантия 1 год, рейтинг ★ 5 на Яндекс.">
   <meta property="og:url" content="https://creatmebel.ru/delivery/">
   <meta name="theme-color" content="#F8F5F0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,8 +21,8 @@
   <header class="site-header">
     <div class="container-main header-inner">
       <a class="brand" href="index.html" aria-label="Креат Мебель — на главную">
-        <span class="brand-name">КРЕАТ<em>.</em></span>
-        <span class="brand-sub">мебель от производителя</span>
+        <span class="brand-name">КРЕАТ <em>МЕБЕЛЬ</em></span>
+        <span class="brand-sub">проверенные фабрики-партнёры</span>
       </a>
       <nav class="main-nav" aria-label="Основная навигация">
         <a href="catalog.html" class="nav-link" id="nav-catalog" aria-haspopup="true">
@@ -34,6 +34,10 @@
         <a href="contacts.html" class="nav-link">Контакты</a>
       </nav>
       <div class="header-actions flex items-center gap-1 ms-auto">
+        <select class="region-select hidden lg:inline-flex" aria-label="Регион доставки">
+          <option value="moscow">Москва и МО</option>
+          <option value="vladimir">Владимир и обл.</option>
+        </select>
         <button type="button" class="scheme-toggle" id="scheme-toggle" aria-label="Переключить цветовую схему" title="Переключить стиль сайта">
           <span class="scheme-toggle-label" id="scheme-label">Минимализм</span>
           <span class="scheme-toggle-indicator"></span>
@@ -73,7 +77,11 @@
   <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
     <div class="mobile-menu-panel">
       <button class="modal-close" id="mobile-menu-close" aria-label="Закрыть меню">×</button>
-      <a href="index.html" class="brand mb-4"><span class="brand-name">КРЕАТ<em>.</em></span><span class="brand-sub">мебель от производителя</span></a>
+      <a href="index.html" class="brand mb-4"><span class="brand-name">КРЕАТ <em>МЕБЕЛЬ</em></span><span class="brand-sub">проверенные фабрики-партнёры</span></a>
+      <select class="region-select mb-3 w-full" aria-label="Регион доставки">
+        <option value="moscow">Москва и МО</option>
+        <option value="vladimir">Владимир и обл.</option>
+      </select>
       <a href="catalog.html" class="mobile-menu-link">Каталог</a>
       <a href="production.html" class="mobile-menu-link">Производство</a>
       <a href="delivery.html" class="mobile-menu-link">Доставка и оплата</a>
@@ -93,7 +101,7 @@
       </nav>
       <div class="pt-4 pb-2 flex flex-col gap-2">
         <h1 class="section-title text-3xl md:text-4xl">Доставка и оплата</h1>
-        <p class="text-greige max-w-2xl">Доставка по Москве — включена (заказы от 15 000 ₽). Подъём на лифте и сборка мягкой мебели — бесплатно. Остальное — по честным тарифам ниже.</p>
+        <p class="text-greige max-w-2xl">Москва и МО: в пределах МКАД — 2 000 ₽, за МКАД — 45 ₽/км. Владимир и область — рассчитаем при подтверждении заказа <span class="req-inline">[ТРУБ]</span>. Подъём и сборка — по телефону, точную сумму назовём до оплаты.</p>
       </div>
     </div>
 
@@ -101,7 +109,10 @@
     <section id="calculator" class="container-main py-8">
       <div id="delivery-calc" class="grid gap-8 lg:grid-cols-2 items-start">
         <div class="bg-card rounded-(--radius-lg) p-6 md:p-8 flex flex-col gap-6">
-          <h2 class="font-display text-2xl font-semibold">Рассчитайте доставку</h2>
+          <div>
+            <h2 class="font-display text-2xl font-semibold">Рассчитайте доставку</h2>
+            <p class="text-sm text-greige mt-2"><span data-region-msk>Тарифы Москвы и МО. Точную стоимость подтверждаем при заказе.</span><span data-region-pending class="hidden">Выбран регион «Владимир и область» — стоимость и сроки рассчитаем при подтверждении заказа.</span></p>
+          </div>
 
           <div class="flex flex-col gap-3 bg-cream rounded-(--radius-md) p-4">
             <label class="text-sm font-semibold" for="calc-product">Товар</label>
@@ -166,17 +177,17 @@
         <table class="rate-table w-full max-w-3xl">
           <thead><tr><th>Параметр</th><th>Стоимость</th></tr></thead>
           <tbody>
-            <tr><td>Доставка по Москве (в пределах МКАД)</td><td class="rate-included">Включена при заказе от 15 000 ₽</td></tr>
-            <tr><td>…если заказ меньше 15 000 ₽</td><td>1 500 ₽</td></tr>
-            <tr><td>Доставка за МКАД</td><td>40 ₽/км (считается от МКАД)</td></tr>
+            <tr><td>Доставка по Москве (в пределах МКАД)</td><td>2 000 ₽</td></tr>
+            <tr><td>Доставка за МКАД</td><td>45 ₽/км (считается от МКАД)</td></tr>
             <tr><td>Вывоз дальше 50 км от МКАД</td><td>индивидуально, предупреждаем заранее</td></tr>
-            <tr><td>Подъём на этаж (есть лифт)</td><td class="rate-included">Включено</td></tr>
-            <tr><td>Подъём без лифта</td><td>350 ₽/этаж (с 1-го этажа)</td></tr>
-            <tr><td>Сборка: диваны, мягкие кровати, кресла</td><td class="rate-included">Включено — собираем при доставке</td></tr>
-            <tr><td>Сборка: шкафы, гостиные, прихожие, детские, кухни</td><td>500–1 500 ₽ (по сложности)</td></tr>
-            <tr><td>Занос в квартиру, вынос упаковки</td><td class="rate-included">Включено, собираем в тот же день</td></tr>
+            <tr><td>Доставка по Владимиру и области</td><td>рассчитаем при подтверждении заказа <span class="req-inline">[ТРУБ]</span></td></tr>
+            <tr><td>Подъём на этаж (есть лифт)</td><td>по телефону <span class="req-inline">[ТРУБ]</span></td></tr>
+            <tr><td>Подъём без лифта</td><td>по телефону — учтём этаж и ширину пролётов <span class="req-inline">[ТРУБ]</span></td></tr>
+            <tr><td>Сборка мебели</td><td>по телефону — зависит от модели <span class="req-inline">[ТРУБ]</span></td></tr>
+            <tr><td>Занос в квартиру, вынос упаковки</td><td>Включено, собираем в тот же день</td></tr>
           </tbody>
         </table>
+        <p class="text-xs text-greige mt-3">Подъём, сборку и доставку по Владимиру фиксируем в договоре после подтверждения менеджером — цена не изменится.</p>
       </div>
 
       <div class="grid gap-4 md:grid-cols-3 mt-6">
@@ -189,7 +200,7 @@
           <p class="text-greige text-sm">Стоимость доставки и подъёма фиксируем в договоре при заказе. Никаких «вышло дороже» на месте.</p>
         </div>
         <div class="card p-5 flex flex-col gap-2">
-          <h3 class="font-display font-semibold">Фото с производства</h3>
+          <h3 class="font-display font-semibold">Фото с фабрики</h3>
           <p class="text-greige text-sm">Перед отгрузкой пришлём фото вашего изделия: раскрой → сборка → упаковка.</p>
         </div>
       </div>
@@ -201,18 +212,18 @@
       <div class="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <div class="card p-5 flex flex-col gap-2">
           <span class="font-display text-lg font-semibold text-terracotta">01</span>
-          <h3 class="font-semibold">Рассрочка 0–0</h3>
-          <p class="text-greige text-sm">0% первый взнос, 0% переплата, до 24 месяцев на карту любого банка. Оформляем сами — ещё 2 документы по паспорту.</p>
+          <h3 class="font-semibold">Картой онлайн</h3>
+          <p class="text-greige text-sm">Оплата картой через защищённую ссылку после согласования заказа. Сразу получите чек на e-mail.</p>
         </div>
         <div class="card p-5 flex flex-col gap-2">
           <span class="font-display text-lg font-semibold text-terracotta">02</span>
-          <h3 class="font-semibold">Оплата картой</h3>
-          <p class="text-greige text-sm">Картой на сайте после согласования или СБП — по ссылке. Без комиссии.</p>
+          <h3 class="font-semibold">СБП</h3>
+          <p class="text-greige text-sm">Оплата по СБП через ваш банк — скидка 2% <span class="req-inline">[ТРУБ]</span>. Быстро и без комиссии.</p>
         </div>
         <div class="card p-5 flex flex-col gap-2">
           <span class="font-display text-lg font-semibold text-terracotta">03</span>
-          <h3 class="font-semibold">Наличными курьеру</h3>
-          <p class="text-greige text-sm">При получении, после того как осмотрите мебель. Платёж зафиксируем в договоре.</p>
+          <h3 class="font-semibold">При получении</h3>
+          <p class="text-greige text-sm">После того как осмотрите мебель: картой или наличными водителю. Платёж зафиксируем в договоре.</p>
         </div>
         <div class="card p-5 flex flex-col gap-2">
           <span class="font-display text-lg font-semibold text-terracotta">04</span>
@@ -227,12 +238,12 @@
     <section id="garantiya" class="container-main py-8">
       <div class="rounded-(--radius-lg) bg-sand p-6 md:p-10 grid gap-6 md:grid-cols-[1fr_auto] items-center">
         <div class="flex flex-col gap-3">
-          <h2 class="section-title text-2xl md:text-3xl">Гарантия 18 месяцев</h2>
-          <p class="text-greige max-w-2xl">Мы отвечаем за мебель, которую делаем сами, поэтому даём гарантию дольше, чем многие магазины. Возврат и обмен — как по закону, а ещё проще: если мебель не подошла по размеру за 7 дней — заберём и вернём деньги.</p>
+          <h2 class="section-title text-2xl md:text-3xl">Гарантия 1 год</h2>
+          <p class="text-greige max-w-2xl">Отвечаем за мебель, которую делают проверенные фабрики-партнёры, поэтому даём официальную гарантию 1 год. Возврат и обмен — как по закону: если мебель не подошла по размеру за 7 дней — вернём деньги <span class="req-inline">[ТРУБ]</span>.</p>
           <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
-            <span class="chip chip-idle">Материалы и фурнитура 18 мес</span>
-            <span class="chip chip-idle">Каркасы диванов 18 мес</span>
-            <span class="chip chip-idle">Механизмы трансформации 18 мес</span>
+            <span class="chip chip-idle">Материалы и фурнитура — 1 год</span>
+            <span class="chip chip-idle">Каркасы диванов — 1 год</span>
+            <span class="chip chip-idle">Механизмы трансформации — 1 год</span>
           </div>
         </div>
         <button type="button" class="btn btn-primary btn-lg" data-open-modal="size" data-src="garantiya">Гарантия на мой заказ</button>
@@ -245,7 +256,7 @@
       <div class="mt-6 flex flex-col gap-3 max-w-3xl">
         <details class="acc" open>
           <summary>Можете ли поднять диван без лифта?</summary>
-          <div class="acc-body text-greige leading-relaxed">Да, поднимем по лестнице. Стоимость — 350 ₽/этаж, считаем от 1-го этажа. Перед заказом спросим про ширину лестничных пролётов и предложим замерить.</div>
+          <div class="acc-body text-greige leading-relaxed">Да, поднимем по лестнице. Стоимость назовём по телефону при подтверждении заказа — учтём этаж и ширину лестничных пролётов <span class="req-inline">[ТРУБ]</span>.</div>
         </details>
         <details class="acc">
           <summary>Как согласуете время доставки?</summary>
@@ -267,8 +278,8 @@
   <footer class="site-footer bg-sand">
     <div class="container-main py-12 grid gap-8 md:grid-cols-[1.2fr_1fr_1fr_1.2fr]">
       <div class="flex flex-col gap-3">
-        <a href="index.html" class="brand"><span class="brand-name">КРЕАТ<em>.</em></span><span class="brand-sub">мебель от производителя</span></a>
-        <p class="text-sm text-greige leading-relaxed max-w-xs">Мягкая и корпусная мебель в Москве: своё производство и проверенные фабрики. Цена — всё включено.</p>
+        <a href="index.html" class="brand"><span class="brand-name">КРЕАТ <em>МЕБЕЛЬ</em></span><span class="brand-sub">проверенные фабрики-партнёры</span></a>
+        <p class="text-sm text-greige leading-relaxed max-w-xs">Мягкая и корпусная мебель в Москве и Владимире: проверенные фабрики-партнёры. Цена — всё включено.</p>
       </div>
       <nav class="flex flex-col gap-2" aria-label="Каталог в подвале">
         <h3 class="text-xs font-bold uppercase tracking-widest text-greige mb-1">Каталог</h3>
@@ -280,14 +291,17 @@
         <h3 class="text-xs font-bold uppercase tracking-widest text-greige mb-1">Покупателям</h3>
         <a href="delivery.html" class="footer-link">Доставка и оплата</a>
         <a href="production.html" class="footer-link">Производство</a>
-        <a href="delivery.html#garantiya" class="footer-link">Гарантия</a>
-        <button type="button" class="footer-link text-left" data-open-modal="size">Просчёт по размерам</button>
+        <a href="garantiya.html" class="footer-link">Гарантия</a>
+        <a href="vozvrat.html" class="footer-link">Возврат</a>
+        <a href="faq.html" class="footer-link">Вопросы и ответы</a>
+        <a href="raschet.html" class="footer-link">Просчёт по размерам</a>
+        <button type="button" class="footer-link text-left" data-open-modal="size">Быстрый просчёт</button>
       </nav>
       <div class="flex flex-col gap-2">
         <h3 class="text-xs font-bold uppercase tracking-widest text-greige mb-1">Контакты</h3>
         <a href="tel:+79206225195" class="font-bold text-lg hover:text-terracotta">+7 (920) 622-51-95</a>
         <a href="mailto:info@creatmebel.ru" class="footer-link">info@creatmebel.ru</a>
-        <span class="text-sm text-greige">Москва · 9:00–20:00 без выходных</span>
+        <span class="text-sm text-greige"><span data-region-label>Москва и МО</span> · Владимир и область · 9:00–20:00 без выходных</span>
         <div class="flex gap-2 mt-1">
           <a href="https://wa.me/79206225195" target="_blank" rel="noopener" class="icon-btn !w-11 !h-11 bg-white" aria-label="WhatsApp">💬</a>
           <a href="https://vk.com/creatmebel_ru" target="_blank" rel="noopener" class="icon-btn !w-11 !h-11 bg-white" aria-label="ВКонтакте">VK</a>
@@ -298,7 +312,7 @@
     <div class="border-t border-line/70">
       <div class="container-main py-5 flex flex-col md:flex-row gap-2 justify-between text-sm text-greige">
         <span>© 2015–2025 Креат Мебель</span>
-        <a href="#" class="hover:text-terracotta">Политика конфиденциальности</a>
+        <a href="polityka.html" class="hover:text-terracotta">Политика конфиденциальности</a>
       </div>
     </div>
   </footer>

@@ -775,11 +775,11 @@
     /* ---- мета и бейджи ---- */
     var title = $('#product-title');
     if (title) title.textContent = p.name;
-    document.title = p.name + ' — цена ' + formatNumber(p.price) + ' ₽ в Москве | Креат Мебель';
+    document.title = p.name + ' — цена ' + formatNumber(p.price) + ' ₽ в Москве и МО | Креат Мебель';
 
     var meta = $('#product-meta');
     if (meta) {
-      meta.innerHTML = '<span aria-hidden="true">★</span> 4.8 · 27 отзывов · Артикул ' +
+      meta.innerHTML = '<span aria-hidden="true">★</span> 5 на Яндекс · 27 отзывов · Артикул ' +
         escapeHtml(p.id || '') + ' · <a href="#reviews" class="underline decoration-dotted hover:text-terracotta">отзывы</a>';
     }
 
@@ -798,7 +798,7 @@
     /* ---- опции и пересчёт цены ---- */
     var priceEl = $('#product-price');
     var oldPriceEl = $('#product-old-price');
-    var installmentEl = $('#product-installment');
+    var paymentHint = $('#product-installment');
     var fabricChips = $('#fabric-chips');
     var mechChips = $('#mech-chips');
     var sizeChips = $('#size-chips');
@@ -858,13 +858,13 @@
         if (priceEl) priceEl.textContent = formatNumber(target) + ' ₽';
         if (oldPriceEl) oldPriceEl.textContent = old > target ? formatNumber(old) + ' ₽' : '';
       }
-      var perMonth = Math.round(target / 12);
-      if (installmentEl) {
-        installmentEl.innerHTML = '<a href="delivery.html#payment" class="hover:text-terracotta">Рассрочка 0-0-12: <b>' +
-          formatNumber(perMonth) + ' ₽/мес</b>, без первого взноса</a>';
-      }
       var stickyPrice = $('#sticky-price');
       if (stickyPrice) stickyPrice.textContent = formatNumber(target) + ' ₽';
+
+      var paymentHint = $('#product-installment');
+      if (paymentHint) {
+        paymentHint.innerHTML = '<a href="delivery.html#payment" class="hover:text-terracotta">Оплата: карта онлайн, СБП (−2% <span class="req-inline">[ТРУБ]</span>) или при получении</a>';
+      }
     }
 
     function makeChips(el, labels, active, onClick) {
@@ -932,24 +932,41 @@
     /* ---- «Что входит в цену» / обратный калькулятор ---- */
     var includedRows = $('#included-rows');
     if (includedRows) {
-      var deliveryCost = p.deliveryIncluded ? 0 : 1500;
-      var assemblyCost = p.assemblyIncluded ? 0 : 1000;
-      var rows = [
-        { label: 'Товар', value: formatNumber(totalPrice()) + ' ₽' },
-        { label: 'Доставка по Москве (МКАД)', value: p.deliveryIncluded ? 'Включено' : formatNumber(deliveryCost) + ' ₽', ok: p.deliveryIncluded },
-        { label: 'Подъём на этаж (лифт)', value: 'Включено', ok: true },
-        { label: 'Сборка', value: p.assemblyIncluded ? 'В подарок' : formatNumber(assemblyCost) + ' ₽', ok: p.assemblyIncluded }
-      ];
-      includedRows.innerHTML = rows.map(function (r) {
-        return '<div class="flex items-center justify-between gap-3 py-2 border-b border-line/60 last:border-0">' +
-          '<span class="flex items-center gap-2.5"><span class="included-icon" aria-hidden="true">✓</span>' + escapeHtml(r.label) + '</span>' +
-          '<span class="font-semibold ' + (r.ok ? 'text-olive' : 'text-ink') + '">' + escapeHtml(r.value) + '</span></div>';
-      }).join('');
-      var totalRow = $('#included-total');
-      if (totalRow) {
-        totalRow.innerHTML = '<span class="flex items-center gap-2.5"><span class="included-icon" aria-hidden="true">✓</span>Итого всё включено</span>' +
-          '<span class="font-display text-lg font-semibold" data-price-total>' + formatNumber(totalPrice()) + ' ₽</span>';
+      function renderIncluded() {
+        var reg = C.region();
+        var deliveryCost, deliveryText;
+        if (reg.id === 'vladimir') {
+          deliveryCost = 0;
+          deliveryText = 'рассчитаем при подтверждении';
+        } else {
+          deliveryCost = C.RATES.deliveryMkadFlat;
+          deliveryText = formatNumber(deliveryCost) + ' ₽';
+        }
+        var soft = p.category.indexOf('Мягкая') === 0;
+        var rows = [
+          { label: soft ? 'Обивка и наполнитель' : 'Материалы и фурнитура', value: 'Включено', ok: true },
+          { label: 'Каркас и механизмы', value: 'Включено', ok: true },
+          { label: 'Доставка · ' + reg.shortLabel, value: deliveryText, ok: reg.id !== 'vladimir' },
+          { label: 'Подъём', value: 'По телефону [ТРУБ]', ok: false },
+          { label: 'Сборка', value: 'По телефону [ТРУБ]', ok: false },
+          { label: 'Гарантия', value: '1 год', ok: true }
+        ];
+        includedRows.innerHTML = rows.map(function (r) {
+          return '<div class="flex items-center justify-between gap-3 py-2 border-b border-line/60 last:border-0">' +
+            '<span class="flex items-center gap-2.5">' +
+            (r.ok ? '<span class="included-icon" aria-hidden="true">✓</span>' : '<span class="inline-block w-[22px]" aria-hidden="true"></span>') +
+            escapeHtml(r.label) + '</span>' +
+            '<span class="font-semibold text-right ' + (r.ok ? 'text-olive' : 'text-ink') + '">' + escapeHtml(r.value) + '</span></div>';
+        }).join('');
+        var totalRow = $('#included-total');
+        if (totalRow) {
+          var sum = totalPrice() + deliveryCost;
+          totalRow.innerHTML = '<span class="flex items-center gap-2.5"><span class="included-icon" aria-hidden="true">✓</span>Итого: товар + доставка</span>' +
+            '<span class="font-display text-lg font-semibold" data-price-total>' + formatNumber(sum) + ' ₽</span>';
+        }
       }
+      renderIncluded();
+      document.addEventListener('cm:region', renderIncluded);
     }
 
     /* ---- кнопки и корзина ---- */
@@ -1086,8 +1103,15 @@
       });
 
       var discount = promo.discount ? Math.round(subtotal * promo.discount) : 0;
-      var delivery = subtotal - discount >= C.RATES.deliveryMkadIncludedFrom ? 0 : C.RATES.deliveryMkadFlat;
-      var total = subtotal - discount + delivery;
+      var region = C.region();
+      var deliveryCost = 0, deliveryText;
+      if (region.id === 'vladimir') {
+        deliveryText = 'рассчитаем при подтверждении';
+      } else {
+        deliveryCost = C.RATES.deliveryMkadFlat;
+        deliveryText = formatNumber(deliveryCost) + ' ₽';
+      }
+      var total = subtotal - discount + deliveryCost;
 
       $('#cart-subtotal').textContent = formatNumber(subtotal) + ' ₽';
       var promoRow = $('#cart-promo-row');
@@ -1095,12 +1119,10 @@
         promoRow.classList.toggle('hidden', !promo.discount);
         if (promo.discount) $('#cart-promo-value').textContent = '−' + formatNumber(discount) + ' ₽';
       }
-      $('#cart-delivery').textContent = delivery === 0 ? 'Включено' : formatNumber(delivery) + ' ₽';
+      $('#cart-delivery').textContent = deliveryText;
+      var liftLine = $('#cart-lift-line');
+      if (liftLine) liftLine.classList.toggle('hidden', region.id !== 'moscow');
       $('#cart-total').textContent = formatNumber(total) + ' ₽';
-
-      var months = parseInt($('#cart-months').value, 10) || 12;
-      $('#cart-monthly').textContent = formatNumber(total / months) + ' ₽/мес';
-      $('#cart-monthly-note').textContent = 'при рассрочке на ' + months + ' мес. · 0-0 — без первого взноса и переплат';
       C.setCart(cart);
     }
 
@@ -1146,18 +1168,10 @@
       });
     }
 
-    var monthsSel = $('#cart-months');
-    if (monthsSel) monthsSel.addEventListener('change', render);
-
     var checkoutBtn = $('#cart-checkout');
     if (checkoutBtn) {
       checkoutBtn.addEventListener('click', function () {
-        checkoutBtn.textContent = '✓ Заявка оформлена! Перезвоним за 15 минут';
-        checkoutBtn.disabled = true;
-        setTimeout(function () {
-          checkoutBtn.textContent = 'Оформить заказ';
-          checkoutBtn.disabled = false;
-        }, 3500);
+        location.href = 'checkout.html';
       });
     }
 
@@ -1255,52 +1269,49 @@
     function calc() {
       var p = C.getProduct(state.product);
       if (!p) return;
-      var amount = parseInt(p.price, 10);
       var R = C.RATES;
+      var region = C.region();
       var lines = [];
       var total = 0;
 
+      /* Владимир: публичных тарифов нет — только «рассчитаем при подтверждении» */
+      if (region.id === 'vladimir') {
+        els.result.classList.remove('hidden');
+        els.deliveryLine.innerHTML = '<div class="flex justify-between gap-3"><span>Доставка · Владимир и область</span><b>рассчитаем при подтверждении</b></div>';
+        els.liftLine.innerHTML = '<div class="flex justify-between gap-3"><span>Подъём</span><b>по телефону [ТРУБ]</b></div>';
+        els.assemblyLine.innerHTML = '<div class="flex justify-between gap-3"><span>Сборка</span><b>по телефону [ТРУБ]</b></div>';
+        els.totalLine.innerHTML = '<div class="flex justify-between gap-3 font-display text-xl font-semibold mt-2 pt-3 border-t border-line"><span>Итого</span><span>после подтверждения</span></div>';
+        els.anomaly.classList.add('hidden');
+        els.result.dataset.total = 'pending';
+        return;
+      }
+
       /* доставка */
       if (state.zone === 'mkad') {
-        if (amount >= R.deliveryMkadIncludedFrom) {
-          lines.push({ label: 'Доставка по Москве (в пределах МКАД)', text: 'Включено бесплатно', ok: true, cost: 0 });
-        } else {
-          lines.push({ label: 'Доставка по Москве (до 15 000 ₽)', text: formatNumber(R.deliveryMkadFlat) + ' ₽', ok: false, cost: R.deliveryMkadFlat });
-          total += R.deliveryMkadFlat;
-        }
+        lines.push({ label: 'Доставка · в пределах МКАД', text: formatNumber(R.deliveryMkadFlat) + ' ₽', ok: false, cost: R.deliveryMkadFlat });
+        total += R.deliveryMkadFlat;
       } else {
         var kmCost = Math.max(1, state.km) * R.deliveryBeyondMkadPerKm;
-        lines.push({ label: 'За МКАД · ' + Math.max(1, state.km) + ' км × 40 ₽', text: formatNumber(kmCost) + ' ₽', ok: false, cost: kmCost });
+        lines.push({ label: 'За МКАД · ' + Math.max(1, state.km) + ' км × 45 ₽', text: formatNumber(kmCost) + ' ₽', ok: false, cost: kmCost });
         total += kmCost;
         els.anomaly.classList.toggle('hidden', state.km <= R.deliveryBeyondAnomalyKm);
       }
 
-      /* подъём */
-      if (state.lift) {
-        lines.push({ label: 'Подъём на этаж (лифт)', text: 'Включено', ok: true, cost: 0 });
-      } else {
-        var floorsCost = Math.max(0, state.floor - 1) * R.liftPerFloor;
-        lines.push({
-          label: 'Подъём без лифта · ' + Math.max(0, state.floor - 1) + ' эт. × 350 ₽',
-          text: formatNumber(floorsCost) + ' ₽',
-          ok: false,
-          cost: floorsCost
-        });
-        total += floorsCost;
-      }
+      /* подъём — тариф по телефону [ТРЕБУЕТСЯ ОТ КЛИЕНТА] */
+      lines.push({
+        label: state.lift ? 'Подъём на этаж (лифт)' : 'Подъём без лифта',
+        text: 'по телефону [ТРУБ]',
+        ok: false,
+        cost: 0
+      });
 
-      /* сборка */
+      /* сборка — тариф по телефону [ТРЕБУЕТСЯ ОТ КЛИЕНТА] */
       if (state.assembly) {
-        if (p.assemblyIncluded) {
-          lines.push({ label: 'Сборка', text: 'В подарок', ok: true, cost: 0 });
-        } else {
-          lines.push({ label: 'Сборка корпусной мебели', text: formatNumber(R.assemblyCorpusDemo) + ' ₽', ok: false, cost: R.assemblyCorpusDemo });
-          total += R.assemblyCorpusDemo;
-        }
+        lines.push({ label: 'Сборка', text: 'по телефону [ТРУБ]', ok: false, cost: 0 });
       }
 
       /* рендер */
-      els.deliveryLine.innerHTML = lines.filter(function (l) { return l.label.indexOf('Доставка') === 0 || l.label.indexOf('За МКАД') === 0 || l.label === 'Доставка по Москве (до 15 000 ₽)'; })
+      els.deliveryLine.innerHTML = lines.filter(function (l) { return l.label.indexOf('Доставка') === 0 || l.label.indexOf('За МКАД') === 0; })
         .map(function (l) {
           return '<div class="flex justify-between gap-3 ' + (l.ok ? 'text-olive' : '') + '"><span>' + l.label + '</span><b>' + l.text + '</b></div>';
         }).join('');
@@ -1313,14 +1324,10 @@
           return '<div class="flex justify-between gap-3 ' + (l.ok ? 'text-olive' : '') + '"><span>' + l.label + '</span><b>' + l.text + '</b></div>';
         }).join('');
 
-      els.totalZero.classList.toggle('hidden', total !== 0);
-      if (total === 0) {
-        els.totalLine.innerHTML = '<div class="flex justify-between gap-3 text-olive font-semibold"><span>Доставка и подъём</span><b>Включено бесплатно</b></div>' +
-          '<div class="flex justify-between gap-3 text-olive font-semibold"><span>Сборка</span><b>0 ₽ (в подарок)</b></div>' +
-          '<div class="flex justify-between gap-3 text-lg font-display font-semibold mt-2 pt-3 border-t border-olive/30"><span>Итого</span><span>0 ₽ — всё включено</span></div>';
-      } else {
-        els.totalLine.innerHTML = '<div class="flex justify-between gap-3 font-display text-xl font-semibold mt-2 pt-3 border-t border-line"><span>Итого</span><span>' + formatNumber(total) + ' ₽</span></div>';
-      }
+      els.totalZero.classList.add('hidden');
+      els.totalLine.innerHTML =
+        '<div class="flex justify-between gap-3 text-greige text-sm"><span>Подъём и сборка</span><b>по телефону — добавим в счёт после подтверждения</b></div>' +
+        '<div class="flex justify-between gap-3 font-display text-xl font-semibold mt-2 pt-3 border-t border-line"><span>Итого · доставка</span><span>' + formatNumber(total) + ' ₽</span></div>';
       els.result.classList.remove('hidden');
 
       var prev = els.result.dataset.total;
@@ -1330,6 +1337,7 @@
     }
 
     calc();
+    document.addEventListener('cm:region', function () { calc(); });
   }
 
   /* ============================================================
@@ -1582,10 +1590,36 @@
   }
 
   /* ============================================================
+     РЕГИОН: селекторы в шапке/подвале + динамические заметки
+     ============================================================ */
+  function initRegionSelects() {
+    var reg = C.region();
+    var update = function () {
+      var r = C.region();
+      $$('[data-region-label]').forEach(function (el) { el.textContent = r.label; });
+      $$('[data-region-city]').forEach(function (el) { el.textContent = r.geoNames.city; });
+      $$('[data-region-note]').forEach(function (el) { el.textContent = r.deliveryIncludedNote; });
+      $$('[data-region-pending]').forEach(function (el) { el.classList.toggle('hidden', r.id !== 'vladimir'); });
+      $$('[data-region-msk]').forEach(function (el) { el.classList.toggle('hidden', r.id === 'vladimir'); });
+      try { document.dispatchEvent(new CustomEvent('cm:region')); } catch (e) {}
+    };
+    $$('.region-select').forEach(function (sel) {
+      sel.value = reg.id;
+      sel.addEventListener('change', function () {
+        C.setRegion(sel.value);
+        $$('.region-select').forEach(function (s) { s.value = sel.value; });
+        update();
+      });
+    });
+    update();
+  }
+
+  /* ============================================================
      ИНИЦИАЛИЗАЦИЯ
      ============================================================ */
   document.addEventListener('DOMContentLoaded', function () {
     initSchemeToggle();
+    initRegionSelects();
     updateBadges();
     initHeader();
     initModals();

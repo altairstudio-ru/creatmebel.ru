@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Оформление заказа — Креат Мебель</title>
+  <meta name="description" content="Оформление заказа за 3 шага: телефон, доставка, оплата. Оплата картой онлайн, СБП (−2% [ТРУБ]) или при получении. Гарантия 1 год.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Оформление заказа — Креат Мебель">
+  <meta property="og:description" content="3 шага: телефон, доставка, оплата. Без рассрочки — только честные способы оплаты.">
+  <meta property="og:url" content="https://creatmebel.ru/checkout/">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#F8F5F0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="bg-cream font-sans text-ink antialiased body-pad-bottom">
+
+  <!-- ===== ШАПКА ===== -->
+  <header class="site-header">
+    <div class="container-main header-inner">
+      <a class="brand" href="index.html" aria-label="Креат Мебель — на главную">
+        <span class="brand-name">КРЕАТ <em>МЕБЕЛЬ</em></span>
+        <span class="brand-sub">проверенные фабрики-партнёры</span>
+      </a>
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="catalog.html" class="nav-link" id="nav-catalog" aria-haspopup="true">
+          Каталог
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
+        <a href="production.html" class="nav-link">Производство</a>
+        <a href="delivery.html" class="nav-link">Доставка и оплата</a>
+        <a href="contacts.html" class="nav-link">Контакты</a>
+      </nav>
+      <div class="header-actions flex items-center gap-1 ms-auto">
+        <select class="region-select hidden lg:inline-flex" aria-label="Регион доставки">
+          <option value="moscow">Москва и МО</option>
+          <option value="vladimir">Владимир и обл.</option>
+        </select>
+        <button type="button" class="scheme-toggle" id="scheme-toggle" aria-label="Переключить цветовую схему" title="Переключить стиль сайта">
+          <span class="scheme-toggle-label" id="scheme-label">Минимализм</span>
+          <span class="scheme-toggle-indicator"></span>
+        </button>
+        <a href="tel:+79206225195" class="header-phone">+7 (920) 622-51-95</a>
+        <a href="cart.html" class="icon-btn" aria-label="Корзина">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1.6"/><circle cx="19" cy="21" r="1.6"/><path d="M2 3h3l2.6 12.4a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L22 7H6"/></svg>
+          <span class="cart-count hidden">0</span>
+        </a>
+        <button class="icon-btn lg:hidden" id="burger" aria-label="Открыть меню">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mega-menu" class="mega" aria-label="Каталог — категории">
+      <div>
+        <h4>Мягкая мебель</h4>
+        <a class="mega-link" href="catalog.html?cat=soft&amp;sub=divany">Диваны <small>прямые · угловые · детские</small></a>
+        <a class="mega-link" href="catalog.html?cat=soft&amp;sub=kresla">Кресла и пуфики</a>
+      </div>
+      <div>
+        <h4>Корпусная мебель</h4>
+        <a class="mega-link" href="catalog.html?cat=corpus&amp;sub=shkafy">Шкафы <small>купе и распашные</small></a>
+        <a class="mega-link" href="catalog.html?cat=corpus&amp;sub=gostinaya">Гостиная</a>
+        <a class="mega-link" href="catalog.html?cat=corpus&amp;sub=prihozhaya">Прихожая</a>
+        <a class="mega-link" href="catalog.html?cat=corpus&amp;sub=spalnya">Спальня</a>
+        <a class="mega-link" href="catalog.html?cat=corpus&amp;sub=detskaya">Детская</a>
+        <a class="mega-link" href="catalog.html?cat=corpus&amp;sub=kuhnya">Кухня</a>
+      </div>
+      <div class="mega-cta rounded-(--radius-md) bg-terracotta-50 p-4">
+        <a href="#" class="font-semibold text-terracotta-600 hover:underline" data-open-modal="size">⚡ Мебель по вашим размерам — просчёт за 15 минут</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- мобильное меню -->
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-panel">
+      <button class="modal-close" id="mobile-menu-close" aria-label="Закрыть меню">×</button>
+      <a href="index.html" class="brand mb-4"><span class="brand-name">КРЕАТ <em>МЕБЕЛЬ</em></span><span class="brand-sub">проверенные фабрики-партнёры</span></a>
+      <select class="region-select mb-3 w-full" aria-label="Регион доставки">
+        <option value="moscow">Москва и МО</option>
+        <option value="vladimir">Владимир и обл.</option>
+      </select>
+      <a href="catalog.html" class="mobile-menu-link">Каталог</a>
+      <a href="production.html" class="mobile-menu-link">Производство</a>
+      <a href="delivery.html" class="mobile-menu-link">Доставка и оплата</a>
+      <a href="contacts.html" class="mobile-menu-link">Контакты</a>
+      <button type="button" class="btn btn-primary btn-full mt-3" data-open-modal="size">Мебель по моим размерам</button>
+      <a href="tel:+79206225195" class="mobile-menu-phone flex flex-col gap-1 p-4 bg-sand rounded-(--radius-md)">
+        <span class="font-bold text-lg">+7 (920) 622-51-95</span>
+        <span class="text-sm text-greige">Перезвоним за 15 минут · 9:00–20:00</span>
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <div class="container-main">
+      <nav class="crumbs" aria-label="Хлебные крошки">
+        <a href="index.html">Главная</a><span class="sep">/</span><a href="cart.html">Корзина</a><span class="sep">/</span><span class="crumb-current">Оформление</span>
+      </nav>
+      <div class="pt-4 pb-2 flex flex-col gap-2">
+        <h1 class="section-title text-3xl md:text-4xl">Оформление заказа</h1>
+        <p class="text-greige max-w-2xl">Три шага: телефон, доставка, оплата. Цена «всё включено» не изменится: товар + доставка по тарифу + подъём и сборка (по телефону).</p>
+      </div>
+
+      <!-- степпер -->
+      <div class="stepper mt-6" aria-label="Шаги оформления">
+        <div class="stepper-step is-active" data-step-label="1">
+          <span class="stepper-num">1</span><span class="hidden sm:inline">Телефон</span>
+        </div>
+        <span class="stepper-line" aria-hidden="true"></span>
+        <div class="stepper-step" data-step-label="2">
+          <span class="stepper-num">2</span><span class="hidden sm:inline">Доставка</span>
+        </div>
+        <span class="stepper-line" aria-hidden="true"></span>
+        <div class="stepper-step" data-step-label="3">
+          <span class="stepper-num">3</span><span class="hidden sm:inline">Оплата</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-main py-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,360px)] items-start">
+      <!-- ===== ШАГИ ===== -->
+      <section class="flex flex-col gap-4" aria-label="Шаги оформления">
+
+        <!-- Шаг 1: телефон -->
+        <div class="checkout-step card p-6 flex flex-col gap-4" id="checkout-step-1">
+          <div class="flex items-center justify-between">
+            <h2 class="font-display text-xl font-semibold">Шаг 1 · Телефон</h2>
+            <span class="req-badge">демо: код 1234</span>
+          </div>
+          <p class="text-sm text-greige">Подтвердим телефон кодом из СМС — на него будут приходить статусы заказа.</p>
+          <div class="field-wrap">
+            <label class="text-sm text-greige" for="co-phone">Телефон *</label>
+            <input id="co-phone" class="field" type="tel" required placeholder="+7 (900) 000-00-00" autocomplete="tel">
+            <span class="field-hint hidden"></span>
+          </div>
+          <div id="co-sms-wrap" class="hidden flex-col gap-3">
+            <div class="field-wrap">
+              <label class="text-sm text-greige" for="co-code">Код из СМС</label>
+              <input id="co-code" class="field" type="text" inputmode="numeric" placeholder="1234">
+              <span class="field-hint hidden"></span>
+            </div>
+            <p class="text-xs text-greige">Демо-режим: код уже «пришёл» — введите <b>1234</b>.</p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-2">
+            <button type="button" class="btn btn-primary btn-lg flex-1" id="co-get-code">Получить код</button>
+            <a href="cart.html" class="btn btn-ghost btn-lg">← В корзину</a>
+          </div>
+        </div>
+
+        <!-- Шаг 2: доставка -->
+        <div class="checkout-step card p-6 flex-col gap-4 hidden" id="checkout-step-2">
+          <h2 class="font-display text-xl font-semibold">Шаг 2 · Доставка и подъём</h2>
+          <div class="grid gap-3 sm:grid-cols-2">
+            <div class="field-wrap">
+              <label class="text-sm text-greige" for="co-name">Имя</label>
+              <input id="co-name" class="field" type="text" placeholder="Как к вам обращаться">
+            </div>
+            <div class="field-wrap">
+              <label class="text-sm text-greige" for="co-city">Регион доставки</label>
+              <select id="co-city" class="field region-select" aria-label="Регион доставки">
+                <option value="moscow">Москва и МО</option>
+                <option value="vladimir">Владимир и обл.</option>
+              </select>
+            </div>
+          </div>
+          <div class="field-wrap">
+            <label class="text-sm text-greige" for="co-address">Адрес доставки *</label>
+            <input id="co-address" class="field" type="text" required placeholder="Город, улица, дом, квартира">
+            <span class="field-hint hidden"></span>
+          </div>
+          <div class="field-wrap" id="co-km-wrap">
+            <label class="text-sm text-greige" for="co-km">Км за МКАД (0 — в пределах МКАД)</label>
+            <input id="co-km" class="field" type="number" inputmode="numeric" min="0" max="120" value="0">
+          </div>
+          <div id="co-delivery-note" class="rounded-(--radius-md) bg-olive-50 p-4 text-sm leading-relaxed"></div>
+          <div class="flex flex-col sm:flex-row gap-2">
+            <button type="button" class="btn btn-ghost btn-lg" data-checkout-back="1">← Назад</button>
+            <button type="button" class="btn btn-primary btn-lg flex-1" data-checkout-next="3" id="co-to-pay">Далее: оплата →</button>
+          </div>
+        </div>
+
+        <!-- Шаг 3: оплата -->
+        <div class="checkout-step card p-6 flex-col gap-4 hidden" id="checkout-step-3">
+          <h2 class="font-display text-xl font-semibold">Шаг 3 · Оплата</h2>
+          <p class="text-sm text-greige">Без рассрочки и скрытых платежей. Цена зафиксирована в договоре.</p>
+          <div class="flex flex-col gap-3" role="radiogroup" aria-label="Способ оплаты">
+            <label class="radio-card">
+              <input type="radio" name="co-pay" value="card" checked>
+              <span class="radio-mark"></span>
+              <span class="flex flex-col gap-0.5">
+                <b>Карта онлайн</b>
+                <small class="text-greige">Visa, Mastercard, МИР. Платёж защищён, данные карты не храним.</small>
+              </span>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="co-pay" value="sbp">
+              <span class="radio-mark"></span>
+              <span class="flex flex-col gap-0.5">
+                <b>СБП <span class="req-badge">скидка −2% [ТРУБ]</span></b>
+                <small class="text-greige">Оплата по СБП — быстро и без комиссии.</small>
+              </span>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="co-pay" value="cod">
+              <span class="radio-mark"></span>
+              <span class="flex flex-col gap-0.5">
+                <b>При получении</b>
+                <small class="text-greige">Без предоплаты. Оплатите после осмотра — картой или наличными.</small>
+              </span>
+            </label>
+          </div>
+          <div class="rounded-(--radius-md) bg-sand p-4 text-sm text-greige leading-relaxed">
+            Договор с зафиксированной ценой «всё включено» и сроком пришлём на подтверждение. Доставка и сборка — по тарифу вашего региона.
+          </div>
+          <div class="flex flex-col sm:flex-row gap-2">
+            <button type="button" class="btn btn-ghost btn-lg" data-checkout-back="2">← Назад</button>
+            <button type="button" class="btn btn-primary btn-lg flex-1" id="co-submit">Оформить заказ</button>
+          </div>
+        </div>
+
+        <!-- Успех -->
+        <div id="checkout-success" class="card p-6 md:p-10 hidden flex-col gap-4">
+          <span class="confirm-icon" aria-hidden="true">✓</span>
+          <h2 class="font-display text-2xl font-semibold">Заказ №<span class="font-bold" id="co-order-num">CM-4821</span> принят</h2>
+          <p class="text-greige leading-relaxed max-w-lg">Статус заказа пришлём в СМС. Дальше по плану: подтверждение фабрикой → производство → готовность → доставка. Следить за статусом можно на странице заказа.</p>
+          <div class="flex flex-col sm:flex-row gap-2">
+            <a href="order.html" class="btn btn-primary btn-lg">Отслеживать заказ →</a>
+            <a href="catalog.html" class="btn btn-ghost btn-lg">В каталог</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== СВОДКА ===== -->
+      <aside class="card p-6 flex flex-col gap-4 sticky top-24" aria-label="Сводка заказа">
+        <h2 class="font-display text-lg font-semibold">Ваш заказ</h2>
+        <div id="co-items" class="flex flex-col gap-3 text-sm"></div>
+        <dl class="flex flex-col gap-2 text-sm border-t border-line pt-4">
+          <div class="flex justify-between gap-3"><dt class="text-greige">Товары</dt><dd id="co-subtotal" class="font-semibold"></dd></div>
+          <div class="flex justify-between gap-3"><dt class="text-greige">Доставка</dt><dd id="co-delivery" class="font-semibold text-right"></dd></div>
+          <div class="flex justify-between gap-3"><dt class="text-greige">Подъём и сборка</dt><dd class="text-right text-sm text-greige">по телефону <span class="req-inline">[ТРУБ]</span></dd></div>
+        </dl>
+        <div class="flex items-center justify-between border-t border-line pt-4">
+          <span class="font-semibold">Итого</span>
+          <span id="co-total" class="font-display text-xl font-bold"></span>
+        </div>
+        <p class="text-xs text-greige leading-relaxed">Итог — товар и доставка. Подъём и сборку подтвердим по телефону до оплаты. Гарантия на мебель — 1 год.</p>
+      </aside>
+    </div>
+  </main>
+
+  <!-- ===== ФУТЕР ===== -->
+  <footer class="site-footer bg-sand">
+    <div class="container-main py-12 grid gap-8 md:grid-cols-[1.2fr_1fr_1fr_1.2fr]">
+      <div class="flex flex-col gap-3">
+        <a href="index.html" class="brand"><span class="brand-name">КРЕАТ <em>МЕБЕЛЬ</em></span><span class="brand-sub">проверенные фабрики-партнёры</span></a>
+        <p class="text-sm text-greige leading-relaxed max-w-xs">Мягкая и корпусная мебель в Москве и Владимире: проверенные фабрики-партнёры. Цена — всё включено.</p>
+      </div>
+      <nav class="flex flex-col gap-2" aria-label="Каталог в подвале">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-greige mb-1">Каталог</h3>
+        <a href="catalog.html?cat=soft" class="footer-link">Мягкая мебель</a>
+        <a href="catalog.html?cat=corpus" class="footer-link">Корпусная мебель</a>
+        <a href="catalog.html" class="footer-link">Все товары</a>
+      </nav>
+      <nav class="flex flex-col gap-2" aria-label="Покупателям">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-greige mb-1">Покупателям</h3>
+        <a href="delivery.html" class="footer-link">Доставка и оплата</a>
+        <a href="production.html" class="footer-link">Производство</a>
+        <a href="garantiya.html" class="footer-link">Гарантия</a>
+        <a href="vozvrat.html" class="footer-link">Возврат</a>
+        <a href="faq.html" class="footer-link">Вопросы и ответы</a>
+        <a href="raschet.html" class="footer-link">Просчёт по размерам</a>
+        <button type="button" class="footer-link text-left" data-open-modal="size">Быстрый просчёт</button>
+      </nav>
+      <div class="flex flex-col gap-2">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-greige mb-1">Контакты</h3>
+        <a href="tel:+79206225195" class="font-bold text-lg hover:text-terracotta">+7 (920) 622-51-95</a>
+        <a href="mailto:info@creatmebel.ru" class="footer-link">info@creatmebel.ru</a>
+        <span class="text-sm text-greige"><span data-region-label>Москва и МО</span> · Владимир и область · 9:00–20:00 без выходных</span>
+        <div class="flex gap-2 mt-1">
+          <a href="https://wa.me/79206225195" target="_blank" rel="noopener" class="icon-btn !w-11 !h-11 bg-white" aria-label="WhatsApp">💬</a>
+          <a href="https://vk.com/creatmebel_ru" target="_blank" rel="noopener" class="icon-btn !w-11 !h-11 bg-white" aria-label="ВКонтакте">VK</a>
+          <a href="https://ok.ru/creatmebel" target="_blank" rel="noopener" class="icon-btn !w-11 !h-11 bg-white" aria-label="Одноклассники">OK</a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-line/70">
+      <div class="container-main py-5 flex flex-col md:flex-row gap-2 justify-between text-sm text-greige">
+        <span>© 2015–2025 Креат Мебель</span>
+        <a href="polityka.html" class="hover:text-terracotta">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Нижний таб-бар (mobile) ===== -->
+  <nav class="tabbar" aria-label="Мобильная навигация">
+    <a href="index.html" class="tabbar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+      Главная
+    </a>
+    <a href="catalog.html" class="tabbar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+      Каталог
+    </a>
+    <a href="cart.html" class="tabbar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1.6"/><circle cx="19" cy="21" r="1.6"/><path d="M2 3h3l2.6 12.4a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L22 7H6"/></svg>
+      Корзина <span class="cart-count hidden">0</span>
+    </a>
+    <button type="button" class="tabbar-item" data-open-modal="size">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M3 12h18M3 12l3-3M3 12l3 3M21 12l-3-3M21 12l-3 3"/></svg>
+      Просчёт
+    </button>
+    <a href="contacts.html" class="tabbar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+      Контакты
+    </a>
+  </nav>
+
+  <!-- ===== Модалка «Мебель по вашим размерам» ===== -->
+  <div id="modal-size" class="modal modal-hidden" role="dialog" aria-modal="true" aria-labelledby="size-title">
+    <div class="modal-backdrop"></div>
+    <div class="modal-panel">
+      <button class="modal-close" data-close aria-label="Закрыть">×</button>
+      <div id="size-form-wrap">
+        <h2 id="size-title" class="font-display text-2xl font-semibold mb-2">Мебель по вашим размерам</h2>
+        <p class="text-greige mb-5">Рассчитаем бесплатно за 15 минут. Даже если ниша нестандартная — пришлёте фото или план, предложим решение.</p>
+        <form data-form="size" data-form-success="#size-success" class="flex flex-col gap-4">
+          <div class="field-wrap">
+            <span class="filter-group-title">Тип мебели</span>
+            <div id="size-type-chips" class="flex flex-wrap gap-2"></div>
+          </div>
+          <div class="grid grid-cols-3 gap-3">
+            <div class="field-wrap">
+              <label class="text-sm text-greige" for="size-w">Ширина, мм</label>
+              <input id="size-w" class="field" type="number" inputmode="numeric" placeholder="2100">
+            </div>
+            <div class="field-wrap">
+              <label class="text-sm text-greige" for="size-h">Высота, мм</label>
+              <input id="size-h" class="field" type="number" inputmode="numeric" placeholder="2400">
+            </div>
+            <div class="field-wrap">
+              <label class="text-sm text-greige" for="size-d">Глубина, мм</label>
+              <input id="size-d" class="field" type="number" inputmode="numeric" placeholder="600">
+            </div>
+          </div>
+          <p class="text-xs text-greige -mt-2">Можно примерно — размеры уточним при замере.</p>
+          <div class="field-wrap">
+            <label class="text-sm text-greige" for="size-file">Фото или план комнаты</label>
+            <div class="file-drop">
+              <label for="size-file" class="btn btn-outline btn-sm">Выбрать файл</label>
+              <input id="size-file" class="hidden" type="file" accept="image/*,.pdf">
+              <span class="file-name"></span>
+            </div>
+            <span class="text-xs text-greige">Фото ускорит просчёт. Можно без него.</span>
+          </div>
+          <div class="field-wrap">
+            <label class="text-sm text-greige" for="size-phone">Телефон *</label>
+            <input id="size-phone" class="field" type="tel" required placeholder="+7 (900) 000-00-00" autocomplete="tel">
+            <span class="field-hint hidden"></span>
+          </div>
+          <div class="field-wrap">
+            <label class="text-sm text-greige" for="size-name">Имя</label>
+            <input id="size-name" class="field" type="text" placeholder="Как к вам обращаться">
+          </div>
+          <label class="flex items-start gap-2 text-sm text-greige cursor-pointer">
+            <input type="checkbox" checked class="mt-1 w-4 h-4 accent-[#C25E3C]">
+            Согласен на обработку персональных данных
+          </label>
+          <button type="submit" class="btn btn-primary btn-lg btn-full">Получить расчёт</button>
+        </form>
+      </div>
+      <div id="size-success" class="confirm-box hidden">
+        <span class="confirm-icon" aria-hidden="true">✓</span>
+        <h3 class="font-display text-lg font-semibold">Заявка отправлена</h3>
+        <p>Перезвоним за 15 минут (9:00–20:00). Номер обращения №<span class="font-bold">4 228</span></p>
+        <a href="https://wa.me/79206225195" target="_blank" rel="noopener" class="btn btn-olive">Дублировать в WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    /* ============================================================
+       Checkout (демо): шаги 1–3, сводка корзины, сброс по успеху
+       Выполняется ПОСЛЕ data.js и main.js.
+       ============================================================ */
+    (function () {
+      var $ = function (s) { return document.querySelector(s); };
+      var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+      var C = window.CM;
+      if (!C) return;
+
+      function fmt(n) { return n.toLocaleString('ru-RU') + ' ₽'; }
+
+      function escapeHtml(s) {
+        return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+      }
+
+      /* --- сводка из корзины --- */
+      function renderSummary() {
+        var cart = C.getCart ? C.getCart() : [];
+        var itemsEl = $('#co-items');
+        var subtotal = 0;
+        if (itemsEl) {
+          if (!cart.length) {
+            itemsEl.innerHTML = '<p class="text-greige">Корзина пуста — <a class="underline" href="catalog.html">выберите мебель</a>.</p>';
+          } else {
+            itemsEl.innerHTML = cart.map(function (it) {
+              var p = C.getProduct(it.slug) || { name: it.name || 'Товар', price: 0 };
+              var sum = (parseInt(p.price, 10) || 0) * (it.qty || 1);
+              subtotal += sum;
+              return '<div class="flex justify-between gap-3"><span class="text-greige min-w-0">' +
+                (it.qty > 1 ? it.qty + ' × ' : '') + escapeHtml(p.name) + '</span>' +
+                '<b class="shrink-0">' + fmt(sum) + '</b></div>';
+            }).join('');
+          }
+        }
+        $('#co-subtotal').textContent = fmt(subtotal);
+        updateDelivery();
+      }
+
+      /* --- доставка по региону (та же логика, что в main.js) --- */
+      function deliveryInfo() {
+        var region = C.region ? C.region() : C.REGIONS.moscow;
+        var rates = C.RATES || {};
+        var km = parseInt($('#co-km').value, 10) || 0;
+        if (region.id === 'vladimir') {
+          return { cost: null, note: (region.deliveryPendingNote || 'Стоимость рассчитаем при подтверждении заказа.') };
+        }
+        if (km <= 0) {
+          return { cost: rates.deliveryMkadFlat, note: 'В пределах МКАД — ' + fmt(rates.deliveryMkadFlat) + '.' };
+        }
+        if (rates.deliveryBeyondAnomalyKm && km > rates.deliveryBeyondAnomalyKm) {
+          return { cost: null, note: 'За МКАД дальше ' + rates.deliveryBeyondAnomalyKm + ' км — рассчитаем индивидуально при подтверждении заказа.' };
+        }
+        var cost = rates.deliveryMkadFlat + km * rates.deliveryBeyondMkadPerKm;
+        return { cost: cost, note: 'МКАД ' + fmt(rates.deliveryMkadFlat) + ' + ' + km + ' км × ' + rates.deliveryBeyondMkadPerKm + ' ₽ = ' + fmt(cost) + '.' };
+      }
+
+      function updateDelivery() {
+        var info = deliveryInfo();
+        var noteEl = $('#co-delivery-note');
+        var isVlad = C.getRegion && C.getRegion() === 'vladimir';
+        var kmWrap = $('#co-km-wrap');
+        if (kmWrap) kmWrap.classList.toggle('hidden', isVlad);
+        if (info.cost == null) {
+          $('#co-delivery').innerHTML = 'рассчитаем <span class="req-inline">[ТРУБ]</span>';
+          $('#co-total').textContent = 'по телефону';
+        } else {
+          $('#co-delivery').textContent = fmt(info.cost);
+          var sub = parseInt(String($('#co-subtotal').textContent).replace(/\D/g, ''), 10) || 0;
+          $('#co-total').textContent = fmt(sub + info.cost);
+        }
+        if (noteEl) {
+          noteEl.innerHTML = isVlad
+            ? '<b class="text-ink">Владимир и обл.</b> · ' + escapeHtml(C.REGIONS.vladimir.deliveryPendingNote || 'рассчитаем при подтверждении заказа')
+            : info.note;
+        }
+      }
+
+      /* --- степпер --- */
+      function setStep(n) {
+        $$('.checkout-step').forEach(function (el, i) {
+          var show = (i + 1) === n;
+          el.classList.toggle('hidden', !show);
+          el.classList.toggle('flex', show);
+        });
+        $$('.stepper-step').forEach(function (s, i) {
+          var idx = i + 1;
+          s.classList.toggle('is-active', idx === n);
+          s.classList.toggle('is-done', idx < n);
+        });
+        if (n === 2) updateDelivery();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function hintFor(input) {
+        var h = input.closest('.field-wrap') && input.closest('.field-wrap').querySelector('.field-hint');
+        return h || null;
+      }
+
+      /* --- Шаг 1: СМС-демо --- */
+      var codeSent = false;
+      var getCodeBtn = $('#co-get-code');
+      getCodeBtn.addEventListener('click', function () {
+        var phoneInput = $('#co-phone');
+        var hint = hintFor(phoneInput);
+        var okPhone = /^\+?7[\d\s()-]{9,}$/.test(phoneInput.value.trim().replace(/\s/g, ''));
+        if (!okPhone) {
+          if (hint) { hint.textContent = 'Введите номер в формате +7 (900) 000-00-00'; hint.classList.remove('hidden'); }
+          return;
+        }
+        if (!codeSent) {
+          if (hint) hint.classList.add('hidden');
+          var wrap = $('#co-sms-wrap');
+          wrap.classList.remove('hidden');
+          wrap.classList.add('flex');
+          codeSent = true;
+          getCodeBtn.textContent = 'Подтвердить код';
+          return;
+        }
+        /* код отправлен: проверяем демо-код */
+        var codeVal = $('#co-code').value.trim();
+        var codeHint = hintFor($('#co-code'));
+        if (codeVal !== '1234') {
+          if (codeHint) { codeHint.textContent = 'Неверный код. Демо-код: 1234'; codeHint.classList.remove('hidden'); }
+          return;
+        }
+        if (codeHint) codeHint.classList.add('hidden');
+        setStep(2);
+      });
+
+      /* --- переходы между шагами --- */
+      $$('[data-checkout-next]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          if (btn.id === 'co-to-pay') {
+            var addr = $('#co-address');
+            var hint = hintFor(addr);
+            if (!addr.value.trim()) {
+              if (hint) { hint.textContent = 'Заполните это поле'; hint.classList.remove('hidden'); }
+              return;
+            }
+            if (hint) hint.classList.add('hidden');
+          }
+          setStep(parseInt(btn.getAttribute('data-checkout-next'), 10));
+        });
+      });
+
+      $$('[data-checkout-back]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          setStep(parseInt(btn.getAttribute('data-checkout-back'), 10));
+        });
+      });
+
+      /* --- Оформление → успех (демо) --- */
+      $('#co-submit').addEventListener('click', function () {
+        $('#co-order-num').textContent = 'CM-' + Math.floor(4600 + Math.random() * 400);
+        $$('.checkout-step').forEach(function (el) { el.classList.add('hidden'); el.classList.remove('flex'); });
+        var ok = $('#checkout-success');
+        ok.classList.remove('hidden');
+        ok.classList.add('flex');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (C.setCart) C.setCart([]);
+        var badge = document.querySelector('.cart-count');
+        if (badge) badge.textContent = '0';
+      });
+
+      /* пересчёт сводки при смене региона (глобальное событие из main.js) */
+      document.addEventListener('cm:region', function () { updateDelivery(); });
+
+      renderSummary();
+    })();
+  </script>
+</body>
+</html>

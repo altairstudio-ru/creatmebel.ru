@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Каталог мебели от производителя — Креат Мебель</title>
-  <meta name="description" content="Диваны, шкафы, гостиные, прихожие и кухни от производителя в Москве. Цена «всё включено»: товар, доставка, подъём, сборка. Сроки 10–20 дней, рассрочка 0%.">
+  <title>Каталог мебели — Креат Мебель</title>
+  <meta name="description" content="Диваны, шкафы, гостиные, прихожие и кухни от проверенных фабрик-партнёров в Москве и МО. Цена «всё включено»: товар, доставка по тарифу, подъём и сборка. Сроки 10–20 дней, гарантия 1 год.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Каталог мебели от производителя — Креат Мебель">
-  <meta property="og:description" content="Цена «всё включено»: товар, доставка по Москве, подъём и сборка.">
+  <meta property="og:title" content="Каталог мебели — Креат Мебель">
+  <meta property="og:description" content="Цена «всё включено»: товар, доставка по тарифу, подъём и сборка. Гарантия 1 год, ★ 5 на Яндекс.">
   <meta property="og:url" content="https://creatmebel.ru/catalog/">
   <meta property="og:image" content="https://picsum.photos/seed/divan-richards/600/400">
   <meta name="theme-color" content="#F8F5F0">
@@ -22,8 +22,8 @@
   <header class="site-header">
     <div class="container-main header-inner">
       <a class="brand" href="index.html" aria-label="Креат Мебель — на главную">
-        <span class="brand-name">КРЕАТ<em>.</em></span>
-        <span class="brand-sub">мебель от производителя</span>
+        <span class="brand-name">КРЕАТ <em>МЕБЕЛЬ</em></span>
+        <span class="brand-sub">проверенные фабрики-партнёры</span>
       </a>
       <nav class="main-nav" aria-label="Основная навигация">
         <a href="catalog.html" class="nav-link is-active" id="nav-catalog" aria-haspopup="true">
@@ -35,6 +35,10 @@
         <a href="contacts.html" class="nav-link">Контакты</a>
       </nav>
       <div class="header-actions flex items-center gap-1 ms-auto">
+        <select class="region-select hidden lg:inline-flex" aria-label="Регион доставки">
+          <option value="moscow">Москва и МО</option>
+          <option value="vladimir">Владимир и обл.</option>
+        </select>
         <button type="button" class="scheme-toggle" id="scheme-toggle" aria-label="Переключить цветовую схему" title="Переключить стиль сайта">
           <span class="scheme-toggle-label" id="scheme-label">Минимализм</span>
           <span class="scheme-toggle-indicator"></span>
@@ -74,7 +78,11 @@
   <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
     <div class="mobile-menu-panel">
       <button class="modal-close" id="mobile-menu-close" aria-label="Закрыть меню">×</button>
-      <a href="index.html" class="brand mb-4"><span class="brand-name">КРЕАТ<em>.</em></span><span class="brand-sub">мебель от производителя</span></a>
+      <a href="index.html" class="brand mb-4"><span class="brand-name">КРЕАТ <em>МЕБЕЛЬ</em></span><span class="brand-sub">проверенные фабрики-партнёры</span></a>
+      <select class="region-select mb-3 w-full" aria-label="Регион доставки">
+        <option value="moscow">Москва и МО</option>
+        <option value="vladimir">Владимир и обл.</option>
+      </select>
       <a href="catalog.html" class="mobile-menu-link">Каталог</a>
       <a href="production.html" class="mobile-menu-link">Производство</a>
       <a href="delivery.html" class="mobile-menu-link">Доставка и оплата</a>
@@ -93,8 +101,8 @@
         <a href="index.html">Главная</a><span class="sep">/</span><span class="crumb-current">Каталог</span>
       </nav>
       <div class="pt-4 pb-2 flex flex-col gap-2">
-        <h1 class="section-title text-3xl md:text-4xl">Каталог мебели от производителя</h1>
-        <p class="text-greige">Москва · цена всё включено · доставка 10–20 дней · гарантия 18 месяцев</p>
+        <h1 class="section-title text-3xl md:text-4xl">Каталог мебели</h1>
+        <p class="text-greige">Проверенные фабрики-партнёры · Москва и МО · цена всё включено · 10–20 дней · гарантия 1 год</p>
       </div>
     </div>
 
@@ -230,8 +238,8 @@
   <footer class="site-footer bg-sand">
     <div class="container-main py-12 grid gap-8 md:grid-cols-[1.2fr_1fr_1fr_1.2fr]">
       <div class="flex flex-col gap-3">
-        <a href="index.html" class="brand"><span class="brand-name">КРЕАТ<em>.</em></span><span class="brand-sub">мебель от производителя</span></a>
-        <p class="text-sm text-greige leading-relaxed max-w-xs">Мягкая и корпусная мебель в Москве: своё производство и проверенные фабрики. Цена — всё включено.</p>
+        <a href="index.html" class="brand"><span class="brand-name">КРЕАТ <em>МЕБЕЛЬ</em></span><span class="brand-sub">проверенные фабрики-партнёры</span></a>
+        <p class="text-sm text-greige leading-relaxed max-w-xs">Мягкая и корпусная мебель в Москве и Владимире: проверенные фабрики-партнёры. Цена — всё включено.</p>
       </div>
       <nav class="flex flex-col gap-2" aria-label="Каталог в подвале">
         <h3 class="text-xs font-bold uppercase tracking-widest text-greige mb-1">Каталог</h3>
@@ -243,14 +251,17 @@
         <h3 class="text-xs font-bold uppercase tracking-widest text-greige mb-1">Покупателям</h3>
         <a href="delivery.html" class="footer-link">Доставка и оплата</a>
         <a href="production.html" class="footer-link">Производство</a>
-        <a href="delivery.html#garantiya" class="footer-link">Гарантия</a>
-        <button type="button" class="footer-link text-left" data-open-modal="size">Просчёт по размерам</button>
+        <a href="garantiya.html" class="footer-link">Гарантия</a>
+        <a href="vozvrat.html" class="footer-link">Возврат</a>
+        <a href="faq.html" class="footer-link">Вопросы и ответы</a>
+        <a href="raschet.html" class="footer-link">Просчёт по размерам</a>
+        <button type="button" class="footer-link text-left" data-open-modal="size">Быстрый просчёт</button>
       </nav>
       <div class="flex flex-col gap-2">
         <h3 class="text-xs font-bold uppercase tracking-widest text-greige mb-1">Контакты</h3>
         <a href="tel:+79206225195" class="font-bold text-lg hover:text-terracotta">+7 (920) 622-51-95</a>
         <a href="mailto:info@creatmebel.ru" class="footer-link">info@creatmebel.ru</a>
-        <span class="text-sm text-greige">Москва · 9:00–20:00 без выходных</span>
+        <span class="text-sm text-greige"><span data-region-label>Москва и МО</span> · Владимир и область · 9:00–20:00 без выходных</span>
         <div class="flex gap-2 mt-1">
           <a href="https://wa.me/79206225195" target="_blank" rel="noopener" class="icon-btn !w-11 !h-11 bg-white" aria-label="WhatsApp">💬</a>
           <a href="https://vk.com/creatmebel_ru" target="_blank" rel="noopener" class="icon-btn !w-11 !h-11 bg-white" aria-label="ВКонтакте">VK</a>
@@ -261,7 +272,7 @@
     <div class="border-t border-line/70">
       <div class="container-main py-5 flex flex-col md:flex-row gap-2 justify-between text-sm text-greige">
         <span>© 2015–2025 Креат Мебель</span>
-        <a href="#" class="hover:text-terracotta">Политика конфиденциальности</a>
+        <a href="polityka.html" class="hover:text-terracotta">Политика конфиденциальности</a>
       </div>
     </div>
   </footer>

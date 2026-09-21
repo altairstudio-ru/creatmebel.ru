@@ -26,8 +26,7 @@ window.CM.RATES = {
   liftPerFloor: null,
   assemblyCorpusMin: null,
   assemblyCorpusMax: null,
-  assemblyCorpusDemo: null,
-  sbpDiscount: 0.02
+  assemblyCorpusDemo: null
 };
 
 /* Регионы M1: Москва и МО (дефолт) + Владимир и область.

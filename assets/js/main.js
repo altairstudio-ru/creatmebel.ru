@@ -863,7 +863,7 @@
 
       var paymentHint = $('#product-installment');
       if (paymentHint) {
-        paymentHint.innerHTML = '<a href="delivery.html#payment" class="hover:text-terracotta">Оплата: карта онлайн, СБП (−2% <span class="req-inline">[ТРУБ]</span>) или при получении</a>';
+        paymentHint.innerHTML = '<a href="delivery.html#payment" class="hover:text-terracotta">Оплата при получении — без предоплаты</a>';
       }
     }
 

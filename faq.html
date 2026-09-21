@@ -98,10 +98,17 @@
         <a href="contacts.html" class="nav-link">Контакты</a>
       </nav>
       <div class="header-actions flex items-center gap-1 ms-auto">
-        <select class="region-select hidden lg:inline-flex" aria-label="Регион доставки">
-          <option value="moscow">Москва и МО</option>
-          <option value="vladimir">Владимир и обл.</option>
-        </select>
+        <div class="city-picker hidden lg:inline-flex">
+          <button type="button" class="city-pill" aria-haspopup="true" aria-expanded="false" aria-label="Выбрать регион доставки">
+            <svg class="pin" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-region-city>Москва</span>
+            <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="city-menu" role="listbox" aria-label="Регион доставки">
+            <button type="button" class="city-option" data-city="moscow" role="option">Москва и МО</button>
+            <button type="button" class="city-option" data-city="vladimir" role="option">Владимир и обл.</button>
+          </div>
+        </div>
         <button type="button" class="scheme-toggle" id="scheme-toggle" aria-label="Переключить цветовую схему" title="Переключить стиль сайта">
           <span class="scheme-toggle-label" id="scheme-label">Минимализм</span>
           <span class="scheme-toggle-indicator"></span>

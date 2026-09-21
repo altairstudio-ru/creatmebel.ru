@@ -225,10 +225,10 @@ html:not(.scheme-classic) .scheme-toggle-indicator::after { transform: translate
 }
 .site-header.header-scrolled { border-bottom-color: rgba(43,41,38,.08); box-shadow: 0 4px 20px rgba(43,41,38,.06); }
 .header-inner { display: flex; align-items: center; gap: 20px; min-height: 72px; }
-.brand { display: inline-flex; flex-direction: column; line-height: 1.05; }
-.brand-name { font-family: var(--font-display); font-weight: 700; font-size: 20px; color: var(--color-ink); letter-spacing: -.01em; }
+.brand { display: inline-flex; flex-direction: column; align-items: flex-start; line-height: 1; }
+.brand-name { font-family: var(--font-display); font-weight: 700; font-size: 20px; color: var(--color-ink); letter-spacing: -.01em; line-height: 1; }
 .brand-name em { font-style: normal; color: var(--color-terracotta); }
-.brand-sub { font-size: 11px; color: var(--color-greige); }
+.brand-sub { font-size: 11px; color: var(--color-greige); line-height: 1.35; margin-top: 4px; letter-spacing: .01em; }
 .main-nav { display: none; align-items: center; gap: 4px; margin-inline: auto; }
 @media (min-width: 1024px) { .main-nav { display: flex; } }
 .nav-link {
@@ -582,6 +582,41 @@ html:not(.scheme-classic) .scheme-toggle-indicator::after { transform: translate
 }
 .region-select:hover { border-color: var(--color-terracotta); }
 .region-select:focus { outline: none; border-color: var(--color-terracotta); }
+
+/* ============================================================
+   M1 v3: плашка города в шапке (вместо select)
+   ============================================================ */
+.city-picker { position: relative; }
+.city-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 40px; padding: 0 14px;
+  border-radius: 999px; border: 1px solid var(--color-line);
+  background: var(--color-card);
+  font-size: 13px; font-weight: 700; color: var(--color-ink);
+  cursor: pointer; white-space: nowrap;
+  transition: border-color .2s ease, color .2s ease;
+}
+.city-pill svg.pin { color: var(--color-terracotta); flex: 0 0 auto; }
+.city-pill svg.chev { color: var(--color-greige); flex: 0 0 auto; transition: transform .2s ease; }
+.city-pill:hover, .city-pill[aria-expanded="true"] { border-color: var(--color-terracotta); color: var(--color-terracotta); }
+.city-pill[aria-expanded="true"] svg.chev { transform: rotate(180deg); }
+.city-menu {
+  position: absolute; top: calc(100% + 6px); right: 0; z-index: 70;
+  min-width: 220px; padding: 6px;
+  background: #fff; border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 40px rgba(43,41,38,.14);
+  display: none; flex-direction: column; gap: 2px;
+}
+.city-menu.city-menu-open { display: flex; }
+.city-option {
+  display: block; width: 100%; text-align: left;
+  padding: 10px 12px; border-radius: var(--radius-sm);
+  font-size: 14px; font-weight: 600; color: var(--color-ink);
+  cursor: pointer; transition: background .15s ease, color .15s ease;
+}
+.city-option:hover { background: var(--color-terracotta-50); color: var(--color-terracotta-600); }
+.city-option.is-current { color: var(--color-terracotta); }
 
 /* ============================================================
    M1 v3: степпер checkout (шаги 1–3)

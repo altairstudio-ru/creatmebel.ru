@@ -1590,7 +1590,7 @@
   }
 
   /* ============================================================
-     РЕГИОН: селекторы в шапке/подвале + динамические заметки
+     РЕГИОН: плашка города в шапке + селекторы в подвале/меню
      ============================================================ */
   function initRegionSelects() {
     var reg = C.region();
@@ -1601,8 +1601,55 @@
       $$('[data-region-note]').forEach(function (el) { el.textContent = r.deliveryIncludedNote; });
       $$('[data-region-pending]').forEach(function (el) { el.classList.toggle('hidden', r.id !== 'vladimir'); });
       $$('[data-region-msk]').forEach(function (el) { el.classList.toggle('hidden', r.id === 'vladimir'); });
+      $$('.city-option').forEach(function (opt) {
+        opt.classList.toggle('is-current', opt.getAttribute('data-city') === r.id);
+      });
       try { document.dispatchEvent(new CustomEvent('cm:region')); } catch (e) {}
     };
+
+    /* плашка города (шапка): открыть/закрыть меню */
+    $$('.city-pill').forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        var picker = pill.closest('.city-picker');
+        var menu = picker ? picker.querySelector('.city-menu') : null;
+        var open = menu && menu.classList.contains('city-menu-open');
+        $$('.city-menu').forEach(function (m) {
+          m.classList.remove('city-menu-open');
+          var p = m.closest('.city-picker');
+          if (p) { var b = p.querySelector('.city-pill'); if (b) b.setAttribute('aria-expanded', 'false'); }
+        });
+        if (!open && menu) {
+          menu.classList.add('city-menu-open');
+          pill.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    /* выбор города из плашки */
+    $$('.city-option').forEach(function (opt) {
+      opt.addEventListener('click', function () {
+        C.setRegion(opt.getAttribute('data-city'));
+        $$('.region-select').forEach(function (s) { s.value = C.region().id; });
+        $$('.city-menu').forEach(function (m) {
+          m.classList.remove('city-menu-open');
+          var p = m.closest('.city-picker');
+          if (p) { var b = p.querySelector('.city-pill'); if (b) b.setAttribute('aria-expanded', 'false'); }
+        });
+        update();
+      });
+    });
+
+    /* закрыть меню города по клику вне плашки */
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest || e.target.closest('.city-picker')) return;
+      $$('.city-menu').forEach(function (m) {
+        m.classList.remove('city-menu-open');
+        var p = m.closest('.city-picker');
+        if (p) { var b = p.querySelector('.city-pill'); if (b) b.setAttribute('aria-expanded', 'false'); }
+      });
+    });
+
+    /* селекторы региона (мобильное меню, страницы) */
     $$('.region-select').forEach(function (sel) {
       sel.value = reg.id;
       sel.addEventListener('change', function () {
